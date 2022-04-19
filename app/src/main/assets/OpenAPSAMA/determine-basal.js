@@ -66,12 +66,11 @@ var determine_basal = function determine_basal(glucose_status, currenttemp, iob_
 
     var bg = glucose_status.glucose;
     
-    var max_iob = profile.max_iob; // maximum amount of non-bolus IOB OpenAPS will ever deliver
-
+    
     //données liées au patient :
     var k_d=0.85;
     var k_i=50;
-    var T_i=60;
+    var Ti=60;
     var k_c=1;
     var bg_ref=100;
     var bg_critique=50;
@@ -79,7 +78,7 @@ var determine_basal = function determine_basal(glucose_status, currenttemp, iob_
     //observateur d'état:
     var L1=1;
     var L2=1;
-    var T_e=5;
+    var Te=5;
 
     var debit_basal=k_d/k_i;
     var insuline_basal=debit_basal;
@@ -111,10 +110,10 @@ var determine_basal = function determine_basal(glucose_status, currenttemp, iob_
       var x3_before=x2_x3_global[x2_x3_global.length-1].x3;
       var ud_before=currenttemp.rate;
       
-      x2_now=(1-T_e/T_i)*x2_before + T_e/T_i*x3_before - T_e*L1*x1_before
-      x3_now=(1-T_e/T_i)*x3_before + T_e/T_i*ud_before - T_e*L2*x1_before
+      x2_now=(1-Te/Ti)*x2_before + Te/Ti*x3_before - Te*L1*x1_before
+      x3_now=(1-Te/Ti)*x3_before + Te/Ti*ud_before - Te*L2*x1_before
       
-      insuline_basal=insuline_basal-T_i*(x2_now+x3_now)
+      insuline_basal=insuline_basal-Ti*(x2_now+x3_now)
     }
     x2_x3_global.push({x2: x2_now, x3: x3_now})
     let data=JSON.stringify(x2_x3_global);
