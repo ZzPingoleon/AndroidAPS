@@ -66,6 +66,10 @@ var determine_basal = function determine_basal(glucose_status, currenttemp, iob_
 
     var bg = glucose_status.glucose;
     
+  
+    var basaliob;
+    if (iob_data.basaliob) { basaliob = iob_data.basaliob; }
+    else { basaliob = iob_data.iob - iob_data.bolussnooze; }
     
     //données liées au patient :
     var k_d=0.85;
