@@ -104,6 +104,12 @@ var determine_basal = function determine_basal(glucose_status, currenttemp, iob_
         x1_before+=(bg_before-bg_ref)/k_i
       }
     }
+    else{
+      bg_before=bg-glucose_status.delta
+      if (bg_before>bg_ref){
+        x1_before+=(bg_before-bg_ref)/k_i
+      }
+    }
   
   
     var x2_now=0
@@ -123,7 +129,12 @@ var determine_basal = function determine_basal(glucose_status, currenttemp, iob_
     x2_x3_global.push({x2: x2_now, x3: x3_now})
     let data=JSON.stringify(x2_x3_global);
     fs.writeFileSync('app/src/main/assets/variables_globales.json',data);
-    
+  
+    if (meal_data.carbs>0){
+      var insuline=insuline_basal+meal_data.carbs/(k_i/k_c)
+      meal_data.carbs=0;
+      return tempBasalFunctions.setTempBasal(insuline, 30, profile, rT, currenttemp);
+    }
   
     if (bg<bg_critique){
       insuline_basal=0;
