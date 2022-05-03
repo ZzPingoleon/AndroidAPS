@@ -38,7 +38,7 @@ public class SourceXdripPluginManual extends PluginBase implements BgSourceInter
                 .mainType(PluginType.BGSOURCE)
                 .fragmentClass(BGSourceFragment.class.getName())
                 .pluginName(R.string.xdrip)
-                .description(R.string.description_source_xdrip)
+                .description(R.string.description_source_xdrip_manual)
         );
     }
 
