@@ -51,6 +51,7 @@
     <string name="description_source_mm640g">Recevoir les glycémies depuis le 600SeriesAndroidUploder.</string>
     <string name="description_source_ns_client">Télécharge les glycémies depuis Nightscout</string>
     <string name="description_source_xdrip">Recevoir les glycémies depuis xDrip.</string>
+    <string name="description_source_xdrip_manual">Recevoir les glycémies depuis xDrip manuellement.</string>
     <string name="description_treatments">Enregistre tous les traitements qui ont été effectués</string>
     <string name="description_wear">Surveillez et contrôlez AndroidAPS en utilisant votre montre WearOS.</string>
     <string name="description_xdrip_status_line">Afficher les informations de votre Boucle sur votre écran de montre xDrip+.</string>
