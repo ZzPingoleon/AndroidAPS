@@ -67,6 +67,8 @@ public class SourceXdripPluginManual extends PluginBase implements BgSourceInter
         String source = "Manual Xdrip application";
         SourceXdripPlugin.getPlugin().setSource(source);
         MainApp.getDbHelper().createIfNotExists(bgReading, "XDRIP");
+        
+        log.debug("Generated BG: $bgReading.value")
     }
 
     public void setSource(String source) {
