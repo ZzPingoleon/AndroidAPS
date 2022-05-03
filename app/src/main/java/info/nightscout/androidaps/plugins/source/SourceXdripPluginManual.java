@@ -23,11 +23,11 @@ import info.nightscout.androidaps.logging.BundleLogger;
 public class SourceXdripPluginManual extends PluginBase implements BgSourceInterface {
     private static Logger log = LoggerFactory.getLogger(L.BGSOURCE);
 
-    private static SourceXdripPlugin plugin = null;
+    private static SourceXdripPluginManual plugin = null;
 
     boolean advancedFiltering;
 
-    public static SourceXdripPlugin getPlugin() {
+    public static SourceXdripPluginManual getPlugin() {
         if (plugin == null)
             plugin = new SourceXdripPluginManual();
         return plugin;
