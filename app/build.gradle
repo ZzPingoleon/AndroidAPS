@@ -150,7 +150,7 @@ android {
     productFlavors {
         flavorDimensions "standard"
         full {
-            applicationId "info.nightscout.androidaps0"
+            applicationId "info.nightscout.androidaps"
             dimension "standard"
             resValue "string", "app_name", "AndroidAPS_test"
             versionName version
