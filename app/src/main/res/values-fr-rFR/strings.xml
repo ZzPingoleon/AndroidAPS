@@ -1435,6 +1435,8 @@ L\'ENSEMBLE DES RISQUES LIÉS À LA QUALITÉ ET À LA PERFORMANCE DU PROGRAMME S
     <string name="randombg">Gly Aléatoire</string>
     <string name="description_source_randombg">Générer des glycémies aléatoires (mode démo uniquement)</string>
     <string name="randombg_short">Gly</string>
+    <string name="randombg2">Gly Aléatoire2</string>
+    <string name="description_source_randombg2">Générer des glycémies aléatoires entre 70 et 140mg/dL</string>
     <string name="tools">Outils</string>
     <string name="show_calculation">Afficher le calcul</string>
     <string name="error">Erreur</string>
