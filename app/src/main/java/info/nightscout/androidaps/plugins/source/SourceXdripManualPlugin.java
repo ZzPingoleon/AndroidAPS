@@ -29,11 +29,11 @@ public class SourceXdripPluginManual extends PluginBase implements BgSourceInter
 
     public static SourceXdripPlugin getPlugin() {
         if (plugin == null)
-            plugin = new SourceXdripPlugin();
+            plugin = new SourceXdripPluginManual();
         return plugin;
     }
 
-    private SourceXdripPlugin() {
+    private SourceXdripPluginManual() {
         super(new PluginDescription()
                 .mainType(PluginType.BGSOURCE)
                 .fragmentClass(BGSourceFragment.class.getName())
