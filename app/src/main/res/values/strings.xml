@@ -1679,6 +1679,8 @@
     <string name="randombg">Random BG</string>
     <string name="description_source_randombg">Generate random BG data (Demo mode only)</string>
     <string name="randombg_short">BG</string>
+    <string name="randombg2">Random BG2</string>
+    <string name="description_source_randombg2">Generate random BG data </string>
     <string name="tools">Tools</string>
     <string name="show_calculation">Show calcuation</string>
     <string name="error">Error</string>
