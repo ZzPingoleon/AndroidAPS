@@ -19,7 +19,7 @@ import java.util.*
 import kotlin.math.PI
 import kotlin.math.sin
 
-object RandomBgPlugin2 : PluginBase(PluginDescription()
+object RandomBG2Plugin : PluginBase(PluginDescription()
         .mainType(PluginType.BGSOURCE)
         .fragmentClass(BGSourceFragment::class.java.name)
         .pluginName(R.string.randombg)
