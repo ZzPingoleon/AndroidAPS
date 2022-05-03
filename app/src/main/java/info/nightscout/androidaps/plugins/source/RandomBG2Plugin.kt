@@ -22,9 +22,9 @@ import kotlin.math.sin
 object RandomBG2Plugin : PluginBase(PluginDescription()
         .mainType(PluginType.BGSOURCE)
         .fragmentClass(BGSourceFragment::class.java.name)
-        .pluginName(R.string.randombg)
+        .pluginName(R.string.randombg2)
         .shortName(R.string.randombg_short)
-        .description(R.string.description_source_randombg)), BgSourceInterface {
+        .description(R.string.description_source_randombg2)), BgSourceInterface {
 
     private val log = LoggerFactory.getLogger(L.BGSOURCE)
 
