@@ -41,7 +41,7 @@ object RandomBG2Plugin : PluginBase(PluginDescription()
     }
 
     override fun advancedFilteringSupported(): Boolean {
-        return false
+        return true
     }
 
     override fun onStart() {
