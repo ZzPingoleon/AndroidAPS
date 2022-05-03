@@ -88,7 +88,7 @@ import info.nightscout.androidaps.plugins.source.SourceNSClientPlugin;
 import info.nightscout.androidaps.plugins.source.SourcePoctechPlugin;
 import info.nightscout.androidaps.plugins.source.SourceTomatoPlugin;
 import info.nightscout.androidaps.plugins.source.SourceXdripPlugin;
-import info.nightscout.androidaps.plugins.source.SourceXdripManualPlugin;
+import info.nightscout.androidaps.plugins.source.SourceXdripPluginManual;
 import info.nightscout.androidaps.plugins.treatments.TreatmentsPlugin;
 import info.nightscout.androidaps.receivers.ChargingStateReceiver;
 import info.nightscout.androidaps.receivers.DataReceiver;
