@@ -61,9 +61,8 @@ object RandomBG2Plugin : PluginBase(PluginDescription()
     override fun handleNewData(intent: Intent) {
         if (!isEnabled(PluginType.BGSOURCE)) return
         val min = 70
-        val max = 190
         
-        max = (max+min)/2
+        val max = (190+min)/2
 
         val cal = GregorianCalendar()
         val currentMinute = cal.get(Calendar.MINUTE) + (cal.get(Calendar.HOUR_OF_DAY) % 2) * 60
