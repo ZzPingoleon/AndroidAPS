@@ -65,7 +65,7 @@ public class SourceXdripPluginManual extends PluginBase implements BgSourceInter
         bgReading.date = bundle.getLong(Intents.EXTRA_TIMESTAMP);
         bgReading.raw = bundle.getDouble(Intents.EXTRA_RAW);
         String source = "Manual Xdrip application";
-        SourceXdripPlugin.getPlugin().setSource(source);
+        SourceXdripPluginManual.getPlugin().setSource(source);
         MainApp.getDbHelper().createIfNotExists(bgReading, "XDRIP");
         
         log.debug("Manually generated BG: $bgReading.value");
