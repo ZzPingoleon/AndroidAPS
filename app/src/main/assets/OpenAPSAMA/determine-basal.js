@@ -77,12 +77,21 @@ var determine_basal = function determine_basal(glucose_status, currenttemp, iob_
     var ti=60;
     var k_c=1;
     var bg_ref=100;
-    var target_bg = (profile.min_bg + profile.max_bg) / 2; // La cible est définie comme la moyenne entre le max et le min donné par l'utilisateur
     var bg_critique=50;
   
+    var dia=profile.dia;
+    
+  
+    if (typeof profile.target_bg !== 'undefined') {
+        target_bg = profile.target_bg;
+    } else {
+      target_bg = (profile.min_bg + profile.max_bg) / 2;// La cible est définie comme la moyenne entre le max et le min donné par l'utilisateur
+        } 
+    }
+
     //observateur d'état:
-    var L1=1;
-    var L2=1;
+    var L1=profile.L1;
+    var L2=profile.L2;
     var te=5;
 
     var debit_basal=k_d/k_i;
