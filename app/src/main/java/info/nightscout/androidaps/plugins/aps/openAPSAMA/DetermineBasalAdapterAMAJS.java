@@ -218,6 +218,13 @@ public class DetermineBasalAdapterAMAJS {
         } else {
             mProfile.put("min_5m_carbimpact", SP.getDouble(R.string.key_openapsama_min_5m_carbimpact, SMBDefaults.min_5m_carbimpact));
         }
+        
+        Double L1_default=-0.0001;
+        mProfile.put("L1", SP.getDouble(R.string.key_openapsama_L1, L1_default));
+        
+        Double L2_default=-0.0001;
+        mProfile.put("L2", SP.getDouble(R.string.key_openapsama_L2, L2_default));
+        
 
         if (ProfileFunctions.getSystemUnits().equals(Constants.MMOL)) {
             mProfile.put("out_units", "mmol/L");
