@@ -506,6 +506,14 @@
     <string name="openapsama_L1_summary">Default value: -0.0001. Value of the first gain of the observator.</string>
     <string name="openapsama_L2" translatable="false">L2</string>
     <string name="openapsama_L2_summary">Default value: -0.0001. Value of the second gain of the observator.</string>
+    <string name="openapsama_Ub" translatable="false">Ub</string>
+    <string name="openapsama_Ub_summary">Default value: 0.017. Ub, débit basal en U/min.</string>
+    <string name="openapsama_CF" translatable="false">CF</string>
+    <string name="openapsama_CF_summary">Default value: 50. CF, compensatoire en mg/dL/U.</string>
+    <string name="openapsama_CIR" translatable="false">CIR</string>
+    <string name="openapsama_CIR_summary">Default value: 500. CIR, Carbo-to-Insulino-Ratio en g/U.</string>
+    <string name="openapsama_DIA" translatable="false">Ub</string>
+    <string name="openapsama_DIA_summary">Default value: 60. DIA, durée de l'insuline active en min.</string>
     <string name="openapsama_link_to_preferncejson_doc_txt">Attention!\nNormally you do not have to change these values below. Please CLICK HERE and READ the text and make sure you UNDERSTAND it before change any of these values.</string>
     <string name="openapsama_link_to_preferncejson_doc" translatable="false">http://openaps.readthedocs.io/en/latest/docs/walkthrough/phase-3/beyond-low-glucose-suspend.html</string>
     <string name="error_only_numeric_digits_allowed">Only numeric digits are allowed.</string>
@@ -1048,6 +1056,10 @@
     <string name="key_openapsama_min_5m_carbimpact" translatable="false">openapsama_min_5m_carbimpact</string>
     <string name="key_L1" translatable="false">openapsama_L1</string>
     <string name="key_L2" translatable="false">openapsama_L2</string>
+    <string name="key_Ub" translatable="false">openapsama_Ub</string>
+    <string name="key_CF" translatable="false">openapsama_CF</string>
+    <string name="key_CIR" translatable="false">openapsama_CIR</string>
+    <string name="key_DIA" translatable="false">openapsama_DIA</string>
     <string name="boluserrorcode">Asked: %1$.2fU Delivered: %2$.2fU Error code: %3$s</string>
     <string name="firstinsulinincrement">First insulin increment</string>
     <string name="secondinsulinincrement">Second insulin increment</string>
