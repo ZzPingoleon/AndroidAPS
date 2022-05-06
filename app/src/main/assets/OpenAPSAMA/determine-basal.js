@@ -72,7 +72,7 @@ var determine_basal = function determine_basal(glucose_status, currenttemp, iob_
     else { basaliob = iob_data.iob - iob_data.bolussnooze; }
     
     //données liées au patient :
-    var Ub=profile.Ub;
+    var U_b=profile.Ub;
     var CF=profile.CF;
     var CIR=profile.CIR;
     var DIA=profile.DIA_aps;
@@ -83,6 +83,12 @@ var determine_basal = function determine_basal(glucose_status, currenttemp, iob_
     var k_c=1;
     var bg_ref=100;
     var bg_critique=50;
+  
+  
+    k_d=U_b*CF;
+    k_i=CF;
+    k_c=CF/CIR;
+    ti=DIA;
   
     var dia_0=profile.dia;
     
