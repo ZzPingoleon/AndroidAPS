@@ -119,7 +119,7 @@ var determine_basal = function determine_basal(glucose_status, currenttemp, iob_
     }
     
     var bg_before=glucose_status.glucose_before;
-    if (bg_before){
+    if (typeof bg_before !=='undefined'){
       if (bg_before>bg_ref){
         x1_before+=(bg_before-bg_ref)/k_i
       }
