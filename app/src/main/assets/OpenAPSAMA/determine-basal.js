@@ -84,7 +84,7 @@ var determine_basal = function determine_basal(glucose_status, currenttemp, iob_
     var bg_ref=100;
     var bg_critique=50;
   
-    var dia=profile.dia;
+    var dia_0=profile.dia;
     
   
     if (typeof profile.target_bg !== 'undefined') {
