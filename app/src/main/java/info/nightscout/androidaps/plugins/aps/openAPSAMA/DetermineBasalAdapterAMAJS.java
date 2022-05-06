@@ -225,6 +225,17 @@ public class DetermineBasalAdapterAMAJS {
         Double L2_default=-0.0001;
         mProfile.put("L2", SP.getDouble(R.string.key_openapsama_L2, L2_default));
         
+        Double Ub_default=0.017;
+        mProfile.put("Ub", SP.getDouble(R.string.key_openapsama_Ub, Ub_default));
+        
+        Double CF_default=50;
+        mProfile.put("CF", SP.getDouble(R.string.key_openapsama_CF, CF_default));
+        
+        Double CIR_default=500;
+        mProfile.put("CIR", SP.getDouble(R.string.key_openapsama_CIR, CIR_default));
+        
+        Double DIA_default=60;
+        mProfile.put("DIA_aps", SP.getDouble(R.string.key_openapsama_DIA, DIA_default));
 
         if (ProfileFunctions.getSystemUnits().equals(Constants.MMOL)) {
             mProfile.put("out_units", "mmol/L");
