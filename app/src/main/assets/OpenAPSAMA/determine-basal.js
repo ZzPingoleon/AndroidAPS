@@ -235,16 +235,10 @@ var determine_basal = function determine_basal(glucose_status, currenttemp, iob_
       insuline_basal+=(bg-bg_ref)/k_i;
     }
     
-    var bg_before=glucose_status.glucose_before;
-    if (typeof bg_before !=='undefined'){
-      if (bg_before>bg_ref){
-        x1_before+=(bg_before-bg_ref)/k_i;
-      }
-    }
-    else{
-      bg_before=bg-glucose_status.delta;
-      if (bg_before>bg_ref){
-        x1_before+=(bg_before-bg_ref)/k_i;
+    
+    var bg_before=bg-glucose_status.delta;
+    if (bg_before>bg_ref){
+      x1_before+=(bg_before-bg_ref)/k_i;
       }
     }
   
