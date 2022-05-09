@@ -98,7 +98,6 @@ var determine_basal = function determine_basal(glucose_status, currenttemp, iob_
     } else {
       target_bg = (profile.min_bg + profile.max_bg) / 2;// La cible est définie comme la moyenne entre le max et le min donné par l'utilisateur
         } 
-    }
 
     //observateur d'état:
     var L1=profile.L1;
