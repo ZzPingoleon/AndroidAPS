@@ -78,6 +78,7 @@ import info.nightscout.androidaps.plugins.sensitivity.SensitivityAAPSPlugin;
 import info.nightscout.androidaps.plugins.sensitivity.SensitivityOref0Plugin;
 import info.nightscout.androidaps.plugins.sensitivity.SensitivityOref1Plugin;
 import info.nightscout.androidaps.plugins.sensitivity.SensitivityWeightedAveragePlugin;
+import info.nightscout.androidaps.plugins.source.RandomBG3Plugin;
 import info.nightscout.androidaps.plugins.source.RandomBG2Plugin;
 import info.nightscout.androidaps.plugins.source.RandomBgPlugin;
 import info.nightscout.androidaps.plugins.source.SourceDexcomPlugin;
