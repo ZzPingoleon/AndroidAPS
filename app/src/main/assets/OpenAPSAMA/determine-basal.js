@@ -227,29 +227,29 @@ var determine_basal = function determine_basal(glucose_status, currenttemp, iob_
  
     var x1_before=debit_basal;
     
-    const fs=require('fs')
-    let rawdata=fs.readFileSync('app/src/main/assets/variables_globales.json')
-    let x2_x3_global=JSON.parse(rawdata)
+    const fs=require('fs');
+    let rawdata=fs.readFileSync('app/src/main/assets/variables_globales.json');
+    let x2_x3_global=JSON.parse(rawdata);
     
     if (bg>bg_ref){
-      insuline_basal+=(bg-bg_ref)/k_i
+      insuline_basal+=(bg-bg_ref)/k_i;
     }
     
     var bg_before=glucose_status.glucose_before;
     if (typeof bg_before !=='undefined'){
       if (bg_before>bg_ref){
-        x1_before+=(bg_before-bg_ref)/k_i
+        x1_before+=(bg_before-bg_ref)/k_i;
       }
     }
     else{
-      bg_before=bg-glucose_status.delta
+      bg_before=bg-glucose_status.delta;
       if (bg_before>bg_ref){
-        x1_before+=(bg_before-bg_ref)/k_i
+        x1_before+=(bg_before-bg_ref)/k_i;
       }
     }
   
   
-    var x2_now=0
+    var x2_now=0;
     var x3_now=0;
   
     if (x2_x3_global.length>0){
@@ -258,17 +258,17 @@ var determine_basal = function determine_basal(glucose_status, currenttemp, iob_
       var x3_before=x2_x3_global[x2_x3_global.length-1].x3;
       var ud_before=currenttemp.rate;
       
-      x2_now=(1-te/ti)*x2_before + te/ti*x3_before - te*L1*x1_before
-      x3_now=(1-te/ti)*x3_before + te/ti*ud_before - te*L2*x1_before
+      x2_now=(1-te/ti)*x2_before + te/ti*x3_before - te*L1*x1_before;
+      x3_now=(1-te/ti)*x3_before + te/ti*ud_before - te*L2*x1_before;
       
-      insuline_basal=insuline_basal-ti*(x2_now+x3_now)
+      insuline_basal=insuline_basal-ti*(x2_now+x3_now);
     }
-    x2_x3_global.push({x2: x2_now, x3: x3_now})
+    x2_x3_global.push({x2: x2_now, x3: x3_now});
     let data=JSON.stringify(x2_x3_global);
     fs.writeFileSync('app/src/main/assets/variables_globales.json',data);
   
     if (meal_data.carbs>0){
-      var insuline=insuline_basal+meal_data.carbs/(k_i/k_c)
+      var insuline=insuline_basal+meal_data.carbs/(k_i/k_c);
       meal_data.carbs=0;
       return tempBasalFunctions.setTempBasal(insuline, 30, profile, rT, currenttemp);
     }
