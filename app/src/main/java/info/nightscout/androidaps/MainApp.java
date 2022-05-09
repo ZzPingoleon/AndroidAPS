@@ -222,6 +222,7 @@ public class MainApp extends Application {
             pluginsList.add(SourceEversensePlugin.getPlugin());
             pluginsList.add(RandomBgPlugin.INSTANCE);
             pluginsList.add(RandomBG2Plugin.INSTANCE);
+            pluginsList.add(RandomBG3Plugin.INSTANCE);
             if (!Config.NSCLIENT) pluginsList.add(SmsCommunicatorPlugin.INSTANCE);
             pluginsList.add(FoodPlugin.getPlugin());
 
