@@ -62,13 +62,11 @@ object RandomBG3Plugin : PluginBase(PluginDescription()
         if (!isEnabled(PluginType.BGSOURCE)) return
         val cal = GregorianCalendar()
         val currentMinute = cal.get(Calendar.MINUTE) + (cal.get(Calendar.HOUR_OF_DAY) % 2) * 60
-        
+        val bgMgdl=100+currentMinute*0.2
         if (currentMinute%20<10){
-          val bgMgdl = 100-currentMinute*0.2
+          bgMgdl = 100-currentMinute*0.2
         }
-        else{
-          val bgMgdl=100+currentMinute*0.2
-        }
+        
         val bgReading = BgReading()
         bgReading.value = bgMgdl
         bgReading.date = DateUtil.now()
