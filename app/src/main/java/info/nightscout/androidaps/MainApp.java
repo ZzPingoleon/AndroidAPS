@@ -126,6 +126,33 @@ public class MainApp extends Application {
 
     public static boolean devBranch;
     public static boolean engineeringMode;
+    
+    //variables globales:
+    private float x2;
+    private float x3;
+    private double u_prec=0.0;
+    
+    
+    public float getx2() {
+        return x2;
+    }
+    public void setx2(float new_x2) {
+        this.x2 = new_x2;
+    }
+    
+    public float getx3() {
+        return x3;
+    }
+    public void setx3(float new_x3) {
+        this.x3 = new_x3;
+    }
+    
+    public double getu_prec() {
+        return u_prec;
+    }
+    public void u_prec(double new_u_prec) {
+        this.u_prec = new_u_prec;
+    }
 
     @Override
     public void onCreate() {
