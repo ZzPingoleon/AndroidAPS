@@ -223,6 +223,12 @@ var determine_basal = function determine_basal(glucose_status, currenttemp, iob_
 
     var debit_basal=k_d/k_i;
     var insuline_basal=debit_basal;
+  
+    var x2=0;
+    var x3=0;
+    
+    insuline_basal+=(bg-bg_ref)/k_i-ti*(x2+x3);
+  
 
     // generate predicted future BGs based on IOB, COB, and current absorption rate
 
