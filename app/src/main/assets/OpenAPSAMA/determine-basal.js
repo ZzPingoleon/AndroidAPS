@@ -227,7 +227,23 @@ var determine_basal = function determine_basal(glucose_status, currenttemp, iob_
     var x2=0;
     var x3=0;
     
-    insuline_basal+=(bg-bg_ref)/k_i-ti*(x2+x3);
+    var insuline=(bg-bg_ref)/k_i-ti*(x2+x3);
+  
+    if (bg<target_bg){
+      insuline=0;
+    }
+  
+    insuline+=insuline_basal;
+    if (meal_data.mealCOB>0){
+      insuline+=meal_data.mealCOB/(k_i/k_c);
+    }
+  
+    if (bg<bg_critique){
+      insuline=0;
+    }
+    if (insuline<0){
+      insuline=0;
+    }
   
 
     // generate predicted future BGs based on IOB, COB, and current absorption rate
