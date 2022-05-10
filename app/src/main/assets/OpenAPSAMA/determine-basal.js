@@ -13,6 +13,12 @@
   THE SOFTWARE.
 */
 
+//import "app/src/main/java/info/nightscout/androidaps/MainApp"
+
+//variables gloables:
+var x2=0.0;
+var x3=0.0;
+var u_prec=0.0;
 
 var round_basal = require('../round-basal')
 
@@ -209,8 +215,7 @@ var determine_basal = function determine_basal(glucose_status, currenttemp, iob_
     var k_c=1;
     var bg_ref=100;
     var bg_critique=50;
-  
-    var bg_before=bg-glucose_status.delta;  
+   
   
     k_d=u_b*cf;
     k_i=cf;
@@ -232,9 +237,10 @@ var determine_basal = function determine_basal(glucose_status, currenttemp, iob_
       insuline=0;
     }
   
-    insuline+=insuline_basal;
+  
+    insuline=insuline+insuline_basal;
     if (meal_data.mealCOB>0){
-      insuline+=meal_data.mealCOB/(k_i/k_c);
+      insuline=insuline+meal_data.mealCOB/(k_i/k_c);
     }
   
     if (bg<bg_critique){
@@ -244,17 +250,18 @@ var determine_basal = function determine_basal(glucose_status, currenttemp, iob_
       insuline=0;
     }
   
-    MainApp.setx2((1-te/ti)*MainApp.getx2() + te/ti*MainApp.getx3() - te*L1*bg);
-    if (MainApp.getx3()==0.0){
-      MainApp.setx2(0.0);
+    //MainApp.setx2((1-te/ti)*MainApp.getx2() + te/ti*MainApp.getx3() - te*L1*bg);
+    x2=(1-te/ti)*x2 + te/ti*x3 - te*L1*bg;
+    if (x3==0.0){
+      x2=0.0;
     }
   
-    MainApp.setx3((1-te/ti)*MainApp.getx3() + te/ti*MainApp.getu_prec() - te*L2*bg);
-    if ((MainApp.getu_prec()<=insuline_basal)&&(insuline<=insuline_basal)){
-      MainApp.setx3(0.0);
+    x3=(1-te/ti)*x3 + te/ti*u_prec - te*L2*bg;
+    if ((u_prec<=insuline_basal)&&(insuline<=insuline_basal)){
+      x3=0.0;
     }
   
-    MainApp.setu_prec(insuline);
+    u_prec=insuline;
 
     // generate predicted future BGs based on IOB, COB, and current absorption rate
 
