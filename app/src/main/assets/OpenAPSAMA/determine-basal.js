@@ -13,8 +13,6 @@
   THE SOFTWARE.
 */
 
-//import "app/src/main/java/info/nightscout/androidaps/MainApp"
-
 //variables gloables:
 var x2=0.0;
 var x3=0.0;
@@ -203,6 +201,8 @@ var determine_basal = function determine_basal(glucose_status, currenttemp, iob_
     if (iob_data.basaliob) { basaliob = iob_data.basaliob; }
     else { basaliob = iob_data.iob - iob_data.bolussnooze; }
   
+    let currentDate = new Date();
+    let currentMinute=currentDate.getMinutes();
   
     var u_b=profile.Ub;
     var cf=profile.CF;
@@ -231,7 +231,7 @@ var determine_basal = function determine_basal(glucose_status, currenttemp, iob_
     var insuline_basal=debit_basal;
   
     
-    var insuline=(bg-bg_ref)/k_i-ti*(x2+x3);
+    var insuline=(bg-target_bg)/k_i-ti*(x2+x3);
   
     if (bg<target_bg){
       insuline=0;
