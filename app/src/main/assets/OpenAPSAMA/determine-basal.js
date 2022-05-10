@@ -531,7 +531,7 @@ var determine_basal = function determine_basal(glucose_status, currenttemp, iob_
 
         if (typeof currenttemp.duration == 'undefined' || currenttemp.duration == 0) { // no temp is set
             rT.reason += "no temp, setting " + rate + "U/hr";
-            return tempBasalFunctions.setTempBasal(rate, 30, profile, rT, currenttemp);
+            return tempBasalFunctions.setTempBasal(insuline, 30, profile, rT, currenttemp);
         }
 
         if (currenttemp.duration > 5 && (round_basal(rate, profile) <= round_basal(currenttemp.rate, profile))) { // if required temp <~ existing temp basal
