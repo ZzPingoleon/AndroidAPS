@@ -231,7 +231,7 @@ var determine_basal = function determine_basal(glucose_status, currenttemp, iob_
     var insuline_basal=debit_basal;
   
     
-    var insuline=(bg-bg_ref)/k_i-ti*(MainApp.getx2()+MainApp.getx3());
+    var insuline=(bg-bg_ref)/k_i-ti*(x2+x3);
   
     if (bg<target_bg){
       insuline=0;
