@@ -210,6 +210,7 @@ var determine_basal = function determine_basal(glucose_status, currenttemp, iob_
     var bg_ref=100;
     var bg_critique=50;
   
+    var bg_before=bg-glucose_status.delta;  
   
     k_d=u_b*cf;
     k_i=cf;
@@ -224,10 +225,8 @@ var determine_basal = function determine_basal(glucose_status, currenttemp, iob_
     var debit_basal=k_d/k_i;
     var insuline_basal=debit_basal;
   
-    var x2=0;
-    var x3=0;
     
-    var insuline=(bg-bg_ref)/k_i-ti*(x2+x3);
+    var insuline=(bg-bg_ref)/k_i-ti*(MainApp.getx2()+MainApp.getx3());
   
     if (bg<target_bg){
       insuline=0;
@@ -245,6 +244,17 @@ var determine_basal = function determine_basal(glucose_status, currenttemp, iob_
       insuline=0;
     }
   
+    MainApp.setx2((1-te/ti)*MainApp.getx2() + te/ti*MainApp.getx3() - te*L1*bg);
+    if (MainApp.getx3()==0.0){
+      MainApp.setx2(0.0);
+    }
+  
+    MainApp.setx3((1-te/ti)*MainApp.getx3() + te/ti*MainApp.getu_prec() - te*L2*bg);
+    if ((MainApp.getu_prec()<=insuline_basal)&&(insuline<=insuline_basal)){
+      MainApp.setx3(0.0);
+    }
+  
+    MainApp.setu_prec(insuline);
 
     // generate predicted future BGs based on IOB, COB, and current absorption rate
 
