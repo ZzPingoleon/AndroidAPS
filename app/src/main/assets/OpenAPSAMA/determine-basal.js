@@ -207,11 +207,12 @@ var determine_basal = function determine_basal(glucose_status, currenttemp, iob_
   
     var currentDate=new Date();
     var currentMinute=currentDate.getMinutes();
-  /*
+  
     if (currentMinute%15==0){
+      rT.reason="15 minutes passées"
       return tempBasalFunctions.setTempBasal(0.04, 30, profile, rT, currenttemp);
     }
-  */
+  
   
     var u_b=profile.Ub;
     var cf=profile.CF;
