@@ -40,7 +40,7 @@ tempBasalFunctions.setTempBasal = function setTempBasal(rate, duration, profile,
         if (typeof(currenttemp) !== 'undefined' && typeof(currenttemp.duration) !== 'undefined' && currenttemp.duration > 0) {
           reason(rT, 'Suggested rate is same as profile rate, a temp basal is active, canceling current temp');
           rT.duration = 0;
-          rT.rate = 0;
+          rT.rate = rate;
           return rT;
         } else {
           reason(rT, 'Suggested rate is same as profile rate, no temp basal is active, doing nothing');
@@ -49,12 +49,12 @@ tempBasalFunctions.setTempBasal = function setTempBasal(rate, duration, profile,
       } else {
         reason(rT, 'Setting neutral temp basal of ' + profile.current_basal + 'U/hr');
         rT.duration = duration;
-        rT.rate = suggestedRate;
+        rT.rate = rate;
         return rT;
       }
     } else {
       rT.duration = duration;
-      rT.rate = suggestedRate;
+      rT.rate = rate;
       return rT;
     }
 };
