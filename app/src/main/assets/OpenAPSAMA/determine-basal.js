@@ -249,8 +249,8 @@ var determine_basal = function determine_basal(glucose_status, currenttemp, iob_
   
   
     insuline=insuline+insuline_basal;
-    if (meal_data.mealCOB>0){
-      insuline=insuline+meal_data.mealCOB/(k_i/k_c);
+    if (meal_data.carbs>0){
+      insuline=insuline+meal_data.carbs/(k_i/k_c);
     }
   
     if (bg<bg_critique){
