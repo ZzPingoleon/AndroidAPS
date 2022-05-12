@@ -119,6 +119,19 @@
             android:title="@string/openapsama_DIA"
             validate:floatmaxNumber="1000.0"
             validate:floatminNumber="0.0"
+            validate:testType="floatNumericRange" />
+        
+        <com.andreabaccega.widget.ValidatingEditTextPreference
+            android:defaultValue="5.0"
+            android:dialogMessage="@string/openapsama_max_basal_summary"
+            android:inputType="numberDecimal"
+            android:key="@string/key_openapsama_max_basal"
+            android:maxLines="20"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="@string/openapsama_max_basal"
+            validate:floatmaxNumber="1000.0"
+            validate:floatminNumber="0.0"
             validate:testType="floatNumericRange" />  
 
         <PreferenceScreen android:title="@string/advancedsettings_title">
