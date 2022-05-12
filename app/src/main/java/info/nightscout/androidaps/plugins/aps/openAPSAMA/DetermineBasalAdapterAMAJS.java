@@ -209,7 +209,7 @@ public class DetermineBasalAdapterAMAJS {
         mProfile.put("max_daily_safety_multiplier", SP.getInt(R.string.key_openapsama_max_daily_safety_multiplier, 3));
         mProfile.put("current_basal_safety_multiplier", SP.getDouble(R.string.key_openapsama_current_basal_safety_multiplier, 4d));
         mProfile.put("skip_neutral_temps", true);
-        mProfile.put("current_basal", basalrate);
+        //mProfile.put("current_basal", basalrate);
         mProfile.put("temptargetSet", tempTargetSet);
         mProfile.put("autosens_adjust_targets", SP.getBoolean(R.string.key_openapsama_autosens_adjusttargets, true));
         //align with max-absorption model in AMA sensitivity
@@ -236,6 +236,8 @@ public class DetermineBasalAdapterAMAJS {
         
         Double DIA_default=60.0;
         mProfile.put("DIA_aps", SP.getDouble(R.string.key_openapsama_DIA, DIA_default));
+        
+        mProfile.put("current_basal", SP.getDouble(R.string.key_openapsama_Ub, Ub_default));
 
         if (ProfileFunctions.getSystemUnits().equals(Constants.MMOL)) {
             mProfile.put("out_units", "mmol/L");
