@@ -62,7 +62,7 @@ object ConstantPlugin : PluginBase(PluginDescription()
         if (!isEnabled(PluginType.BGSOURCE)) return
         val cal = GregorianCalendar()
         val currentMinute = cal.get(Calendar.MINUTE) + (cal.get(Calendar.HOUR_OF_DAY) % 2) * 60
-        var bgMgdl = 110
+        var bgMgdl = 110.0
         
         val bgReading = BgReading()
         bgReading.value = bgMgdl
