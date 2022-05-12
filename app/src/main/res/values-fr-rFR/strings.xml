@@ -1440,6 +1440,9 @@ L\'ENSEMBLE DES RISQUES LIÉS À LA QUALITÉ ET À LA PERFORMANCE DU PROGRAMME S
     <string name="description_source_randombg2">Générer des glycémies aléatoires entre 70 et 190 mg/dL</string>
     <string name="randombg3">Gly Aléatoire3</string>
     <string name="description_source_randombg3">Générer une glycémie oscillante autour de 100 mg/dL</string>
+    <string name="constantentry">Entrée de glycémie constante</string>
+    <string name="description_source_constantentry">Générer des glycémies constantes</string>
+    <string name="constantentry_short">Cste</string>
     <string name="tools">Outils</string>
     <string name="show_calculation">Afficher le calcul</string>
     <string name="error">Erreur</string>
