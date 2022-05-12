@@ -199,7 +199,8 @@ public class DetermineBasalAdapterAMAJS {
         mProfile.put("max_iob", maxIob);
         mProfile.put("dia", Math.min(profile.getDia(), 3d));
         mProfile.put("type", "current");
-        mProfile.put("max_daily_basal", profile.getMaxDailyBasal());
+        //mProfile.put("max_daily_basal", profile.getMaxDailyBasal());
+        mProfile.put("max_daily_basal", 100);
         //mProfile.put("max_basal", maxBasal);
         mProfile.put("min_bg", minBg);
         mProfile.put("max_bg", maxBg);
