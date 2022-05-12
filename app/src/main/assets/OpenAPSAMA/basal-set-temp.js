@@ -19,7 +19,7 @@ tempBasalFunctions.setTempBasal = function setTempBasal(rate, duration, profile,
     //var maxSafeBasal = Math.min(profile.max_basal, 3 * profile.max_daily_basal, 4 * profile.current_basal);
     
     //var maxSafeBasal = tempBasalFunctions.getMaxSafeBasal(profile);
-    var maxSadeBasal = 100.0;
+    var maxSafeBasal = 100.0;
     var round_basal = require('./round-basal');
     
     if (rate < 0) { 
