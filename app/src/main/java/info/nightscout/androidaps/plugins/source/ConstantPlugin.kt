@@ -19,12 +19,12 @@ import java.util.*
 import kotlin.math.PI
 import kotlin.math.sin
 
-object RandomBG3Plugin : PluginBase(PluginDescription()
+object ConstantPlugin : PluginBase(PluginDescription()
         .mainType(PluginType.BGSOURCE)
         .fragmentClass(BGSourceFragment::class.java.name)
-        .pluginName(R.string.randombg3)
-        .shortName(R.string.randombg_short)
-        .description(R.string.description_source_randombg3)), BgSourceInterface {
+        .pluginName(R.string.constantentry)
+        .shortName(R.string.constantentry_short)
+        .description(R.string.description_source_constantentry)), BgSourceInterface {
 
     private val log = LoggerFactory.getLogger(L.BGSOURCE)
 
@@ -68,7 +68,7 @@ object RandomBG3Plugin : PluginBase(PluginDescription()
         bgReading.value = bgMgdl
         bgReading.date = DateUtil.now()
         bgReading.raw = bgMgdl
-        MainApp.getDbHelper().createIfNotExists(bgReading, "RandomBG3")
-        log.debug("Generated BG: $bgReading")
+        MainApp.getDbHelper().createIfNotExists(bgReading, "ConstantEntry")
+        log.debug("Generated constant entry: $bgReading")
     }
 }
