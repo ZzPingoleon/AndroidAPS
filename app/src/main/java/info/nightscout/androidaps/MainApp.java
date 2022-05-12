@@ -78,6 +78,7 @@ import info.nightscout.androidaps.plugins.sensitivity.SensitivityAAPSPlugin;
 import info.nightscout.androidaps.plugins.sensitivity.SensitivityOref0Plugin;
 import info.nightscout.androidaps.plugins.sensitivity.SensitivityOref1Plugin;
 import info.nightscout.androidaps.plugins.sensitivity.SensitivityWeightedAveragePlugin;
+import info.nightscout.androidaps.plugins.source.ConstantPlugin;
 import info.nightscout.androidaps.plugins.source.RandomBG3Plugin;
 import info.nightscout.androidaps.plugins.source.RandomBG2Plugin;
 import info.nightscout.androidaps.plugins.source.RandomBgPlugin;
@@ -250,6 +251,7 @@ public class MainApp extends Application {
             pluginsList.add(RandomBgPlugin.INSTANCE);
             pluginsList.add(RandomBG2Plugin.INSTANCE);
             pluginsList.add(RandomBG3Plugin.INSTANCE);
+            pluginsList.add(ConstantPlugin.INSTANCE);
             if (!Config.NSCLIENT) pluginsList.add(SmsCommunicatorPlugin.INSTANCE);
             pluginsList.add(FoodPlugin.getPlugin());
 
