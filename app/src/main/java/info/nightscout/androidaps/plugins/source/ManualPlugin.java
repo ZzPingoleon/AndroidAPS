@@ -55,15 +55,15 @@ public class ManualPlugin extends PluginBase implements BgSourceInterface {
     public void handleNewData(Intent intent) {
 
         if (!isEnabled(PluginType.BGSOURCE)) return
-        val cal = GregorianCalendar()
-        val currentMinute = cal.get(Calendar.MINUTE) + (cal.get(Calendar.HOUR_OF_DAY) % 2) * 60
-        var bgMgdl = 110.0
+            
+        Double bg_manual_default=100.0;
+        Double bg_manual = SP.getDouble(R.string.key_manual_constant, bg_manual_default));
         
         val bgReading = BgReading()
-        bgReading.value = bgMgdl
+        bgReading.value = bg_manual
         bgReading.date = DateUtil.now()
-        bgReading.raw = bgMgdl
-        MainApp.getDbHelper().createIfNotExists(bgReading, "ConstantEntry")
+        bgReading.raw = bg_manual
+        MainApp.getDbHelper().createIfNotExists(bgReading, "ConstantManualEntry")
         log.debug("Generated constant entry: $bgReading")
     }
 
