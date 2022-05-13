@@ -58,7 +58,7 @@ public class ManualPlugin extends PluginBase implements BgSourceInterface {
         if (!isEnabled(PluginType.BGSOURCE)) return;
             
         Double bg_manual_default=100.0;
-        Double bg_manual = SP.getDouble(R.string.key_manual_constant, bg_manual_default));
+        Double bg_manual = SP.getDouble(R.string.key_manual_constant, bg_manual_default);
         
         BgReading bgReading = new BgReading();
         bgReading.value = bg_manual;
