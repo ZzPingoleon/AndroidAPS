@@ -15,7 +15,7 @@
             android:title="@string/dexcomg5_xdripupload_title" />
       
         <com.andreabaccega.widget.ValidatingEditTextPreference
-            android:defaultValue="5.0"
+            android:defaultValue="100.0"
             android:dialogMessage="@string/manual_constant_summary"
             android:inputType="numberDecimal"
             android:key="@string/key_manual_constant"
