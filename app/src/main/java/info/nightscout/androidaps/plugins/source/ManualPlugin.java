@@ -17,6 +17,7 @@ import info.nightscout.androidaps.interfaces.BgSourceInterface;
 import info.nightscout.androidaps.interfaces.PluginBase;
 import info.nightscout.androidaps.interfaces.PluginDescription;
 import info.nightscout.androidaps.interfaces.PluginType;
+import info.nightscout.androidaps.utils.DateUtil
 import info.nightscout.androidaps.logging.L;
 import info.nightscout.androidaps.utils.JsonHelper;
 import info.nightscout.androidaps.plugins.general.nsclient.NSUpload;
@@ -54,17 +55,17 @@ public class ManualPlugin extends PluginBase implements BgSourceInterface {
     @Override
     public void handleNewData(Intent intent) {
 
-        if (!isEnabled(PluginType.BGSOURCE)) return
+        if (!isEnabled(PluginType.BGSOURCE)) return;
             
         Double bg_manual_default=100.0;
         Double bg_manual = SP.getDouble(R.string.key_manual_constant, bg_manual_default));
         
-        val bgReading = BgReading()
-        bgReading.value = bg_manual
-        bgReading.date = DateUtil.now()
-        bgReading.raw = bg_manual
-        MainApp.getDbHelper().createIfNotExists(bgReading, "ConstantManualEntry")
-        log.debug("Generated constant entry: $bgReading")
+        BgReading bgReading = new BgReading();
+        bgReading.value = bg_manual;
+        bgReading.date = DateUtil.now();
+        bgReading.raw = bg_manual;
+        MainApp.getDbHelper().createIfNotExists(bgReading, "ConstantManualEntry");
+        log.debug("Generated constant entry: $bgReading");
     }
 
 }
