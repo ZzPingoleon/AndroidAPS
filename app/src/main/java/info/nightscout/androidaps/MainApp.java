@@ -88,6 +88,7 @@ import info.nightscout.androidaps.plugins.source.SourceGlimpPlugin;
 import info.nightscout.androidaps.plugins.source.SourceMM640gPlugin;
 import info.nightscout.androidaps.plugins.source.SourceNSClientPlugin;
 import info.nightscout.androidaps.plugins.source.SourcePoctechPlugin;
+import info.nightscout.androidaps.plugins.source.ManualPlugin;
 import info.nightscout.androidaps.plugins.source.SourceTomatoPlugin;
 import info.nightscout.androidaps.plugins.source.SourceXdripPlugin;
 import info.nightscout.androidaps.plugins.source.SourceXdripPluginManual;
@@ -246,6 +247,7 @@ public class MainApp extends Application {
             pluginsList.add(SourceGlimpPlugin.getPlugin());
             pluginsList.add(SourceDexcomPlugin.INSTANCE);
             pluginsList.add(SourcePoctechPlugin.getPlugin());
+            pluginsList.add(ManualPlugin.getPlugin());
             pluginsList.add(SourceTomatoPlugin.getPlugin());
             pluginsList.add(SourceEversensePlugin.getPlugin());
             pluginsList.add(RandomBgPlugin.INSTANCE);
