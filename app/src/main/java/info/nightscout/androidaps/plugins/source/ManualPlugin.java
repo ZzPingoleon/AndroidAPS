@@ -40,7 +40,7 @@ public class ManualPlugin extends PluginBase implements BgSourceInterface {
         super(new PluginDescription()
                 .mainType(PluginType.BGSOURCE)
                 .fragmentClass(BGSourceFragment.class.getName())
-                .pluginName(R.string.manual)
+                .pluginName(R.string.source_manual)
                 .preferencesId(R.xml.pref_manual)
                 .description(R.string.description_source_manual)
         );
