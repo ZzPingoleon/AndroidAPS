@@ -247,7 +247,7 @@ public class MainApp extends Application {
             pluginsList.add(SourceGlimpPlugin.getPlugin());
             pluginsList.add(SourceDexcomPlugin.INSTANCE);
             pluginsList.add(SourcePoctechPlugin.getPlugin());
-            pluginsList.add(ManualPlugin.getPlugin());
+            pluginsList.add(ManualPlugin.INSTANCE);
             pluginsList.add(SourceTomatoPlugin.getPlugin());
             pluginsList.add(SourceEversensePlugin.getPlugin());
             pluginsList.add(RandomBgPlugin.INSTANCE);
