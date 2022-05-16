@@ -36,6 +36,7 @@ import info.nightscout.androidaps.interfaces.PumpInterface;
 import info.nightscout.androidaps.logging.L;
 import info.nightscout.androidaps.plugins.aps.loop.LoopPlugin;
 import info.nightscout.androidaps.plugins.aps.openAPSAMA.OpenAPSAMAPlugin;
+import info.nightscout.androidaps.plugins.aps.DynamicBolusCalculator.DBCPlugin;
 import info.nightscout.androidaps.plugins.aps.openAPSMA.OpenAPSMAPlugin;
 import info.nightscout.androidaps.plugins.aps.openAPSSMB.OpenAPSSMBPlugin;
 import info.nightscout.androidaps.plugins.configBuilder.ConfigBuilderPlugin;
@@ -231,6 +232,7 @@ public class MainApp extends Application {
             if (Config.APS) pluginsList.add(LoopPlugin.getPlugin());
             if (Config.APS) pluginsList.add(OpenAPSMAPlugin.getPlugin());
             if (Config.APS) pluginsList.add(OpenAPSAMAPlugin.getPlugin());
+            if (Config.APS) pluginsList.add(DBCPlugin.getPlugin());
             if (Config.APS) pluginsList.add(OpenAPSSMBPlugin.getPlugin());
             pluginsList.add(NSProfilePlugin.getPlugin());
             if (!Config.NSCLIENT) pluginsList.add(LocalProfilePlugin.INSTANCE);
