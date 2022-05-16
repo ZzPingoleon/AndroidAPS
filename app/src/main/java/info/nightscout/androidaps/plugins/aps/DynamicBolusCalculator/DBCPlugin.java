@@ -40,7 +40,7 @@ import info.nightscout.androidaps.utils.Round;
 public class DBCPlugin extends PluginBase implements APSInterface {
     private static Logger log = LoggerFactory.getLogger(L.APS);
 
-    private static DBCPlugin openAPSAMAPlugin;
+    private static DBCPlugin DBCPlugin;
 
     public static DBCPlugin getPlugin() {
         if (DBCPlugin == null) {
