@@ -93,7 +93,7 @@ class DBCFragment : Fragment() {
             openapsma_scriptdebugdata.text = determineBasalAdapterAMAJS.scriptDebug
         }
         if (DBCPlugin.getPlugin().lastAPSRun != 0L) {
-            openapsma_lastrun.text = DateUtil.dateAndTimeFullString(OpenAPSAMAPlugin.getPlugin().lastAPSRun)
+            openapsma_lastrun.text = DateUtil.dateAndTimeFullString(DBCPlugin.getPlugin().lastAPSRun)
         }
         DBCPlugin.getPlugin().lastAutosensResult?.let {
             openapsma_autosensdata.text = JSONFormatter.format(it.json())
