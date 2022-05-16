@@ -473,6 +473,7 @@
     <string name="loop_shortname">LOOP</string>
     <string name="simpleprofile_shortname">SP</string>
     <string name="oaps_shortname">OAPS</string>
+    <string name="dbc_shortname">DBC</string>
     <string name="localprofile_shortname">LP</string>
     <string name="danarpump_shortname">DANA</string>
     <string name="overview_shortname">HOME</string>
