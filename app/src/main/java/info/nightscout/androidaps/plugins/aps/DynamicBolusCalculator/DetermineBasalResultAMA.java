@@ -1,4 +1,4 @@
-package info.nightscout.androidaps.plugins.aps.openAPSAMA;
+package info.nightscout.androidaps.plugins.aps.DynamicBolusCalculator;
 
 import org.json.JSONException;
 import org.json.JSONObject;
