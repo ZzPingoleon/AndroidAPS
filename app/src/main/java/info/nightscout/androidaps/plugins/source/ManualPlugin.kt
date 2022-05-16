@@ -62,8 +62,8 @@ object ManualPlugin : PluginBase(PluginDescription()
     override fun handleNewData(intent: Intent) {
         if (!isEnabled(PluginType.BGSOURCE)) return
            
-        Double bg_manual_default=100.0
-        Double bg_manual = SP.getDouble(R.string.key_manual_constant, bg_manual_default)
+        val bg_manual_default=100.0
+        val bg_manual = SP.getDouble(R.string.key_manual_constant, bg_manual_default)
 
         val bgReading = BgReading()
         bgReading.value = bg_manual
