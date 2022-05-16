@@ -1,4 +1,4 @@
-package info.nightscout.androidaps.plugins.aps.openAPSAMA;
+package info.nightscout.androidaps.plugins.aps.DynamicBolusCalculator;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -92,7 +92,7 @@ public class DetermineBasalAdapterAMAJS {
             ScriptableObject.defineClass(scope, LoggerCallback.class);
             Scriptable myLogger = rhino.newObject(scope, "LoggerCallback", null);
             scope.put("console2", scope, myLogger);
-            rhino.evaluateString(scope, readFile("OpenAPSAMA/loggerhelper.js"), "JavaScript", 0, null);
+            rhino.evaluateString(scope, readFile("DynamicBolusCalculator/loggerhelper.js"), "JavaScript", 0, null);
 
             //set module parent
             rhino.evaluateString(scope, "var module = {\"parent\":Boolean(1)};", "JavaScript", 0, null);
@@ -100,8 +100,8 @@ public class DetermineBasalAdapterAMAJS {
             rhino.evaluateString(scope, "require = function() {return round_basal;};", "JavaScript", 0, null);
 
             //generate functions "determine_basal" and "setTempBasal"
-            rhino.evaluateString(scope, readFile("OpenAPSAMA/determine-basal.js"), "JavaScript", 0, null);
-            rhino.evaluateString(scope, readFile("OpenAPSAMA/basal-set-temp.js"), "setTempBasal.js", 0, null);
+            rhino.evaluateString(scope, readFile("DynamicBolusCalculator/determine-basal.js"), "JavaScript", 0, null);
+            rhino.evaluateString(scope, readFile("DynamicBolusCalculator/basal-set-temp.js"), "setTempBasal.js", 0, null);
             Object determineBasalObj = scope.get("determine_basal", scope);
             Object setTempBasalFunctionsObj = scope.get("tempBasalFunctions", scope);
 
