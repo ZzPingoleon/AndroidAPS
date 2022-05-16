@@ -204,6 +204,14 @@ var determine_basal = function determine_basal(glucose_status, currenttemp, iob_
     else { basaliob = iob_data.iob - iob_data.bolussnooze; }
   
   
+    var currentDate=new Date();
+    var currentMinute=currentDate.getMinutes();
+  
+    if (currentMinute%15==0){
+      rT.reason="15 minutes passées"
+      return tempBasalFunctions.setTempBasal(0.032, 30, profile, rT, currenttemp);
+    }
+  
     var u_b=profile.Ub;
     var cf=profile.CF;
     var cir=profile.CIR;
