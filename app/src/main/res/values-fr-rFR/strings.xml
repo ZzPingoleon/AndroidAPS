@@ -405,7 +405,7 @@ L\'ENSEMBLE DES RISQUES LIÉS À LA QUALITÉ ET À LA PERFORMANCE DU PROGRAMME S
     <string name="minago">%1$d min passées</string>
     <string name="sms_minago">il y a %1$d min</string>
     <string name="localprofile">Profil Local</string>
-    <string name="openapsama">Dynamic Bolus Calculator</string>
+    <string name="openapsama">OpenAPS AMA</string>
     <string name="short_avgdelta">Delta basé sur une courte moyenne</string>
     <string name="long_avgdelta">Delta basé sur une longue moyenne</string>
     <string name="array_of_elements">Tableau de %1$d éléments.\nValeur Actuelle :</string>
