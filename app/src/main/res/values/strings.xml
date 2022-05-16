@@ -53,6 +53,7 @@
     <string name="description_ma">State of the algorithm in 2016</string>
     <string name="description_ama">State of the algorithm in 2017</string>
     <string name="description_dbc">Commande modifié selon les recherches du LS2N</string>
+    <string name="description_pid">Commande par PID</string>
     <string name="description_smb">Most recent algorithm for advanced users</string>
     <string name="description_overview">Displays the current state of your loop and buttons for most common actions</string>
     <string name="description_persistent_notification">Shows an ongoing notification with a short overview of what your loop is doing</string>
@@ -442,6 +443,7 @@
     <string name="localprofile">Local Profile</string>
     <string name="openapsama">OpenAPS AMA</string>
     <string name="dynamicboluscalculator">Dynamic Bolus Calculator</string>
+    <string name="pid">PID</string>
     <string name="short_avgdelta">Short avg. delta</string>
     <string name="long_avgdelta">Long avg. delta</string>
     <string name="array_of_elements">Array of %1$d elements.\nActual value:</string>
@@ -475,6 +477,7 @@
     <string name="simpleprofile_shortname">SP</string>
     <string name="oaps_shortname">OAPS</string>
     <string name="dbc_shortname">DBC</string>
+    <string name="pid_shortname">PID</string>
     <string name="localprofile_shortname">LP</string>
     <string name="danarpump_shortname">DANA</string>
     <string name="overview_shortname">HOME</string>
