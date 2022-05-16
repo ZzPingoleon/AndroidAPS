@@ -73,7 +73,7 @@ class PidFragment : Fragment() {
     @Synchronized
     private fun updateGUI() {
         if (openapsma_result == null) return
-        DBCPlugin.getPlugin().lastAPSResult?.let { lastAPSResult ->
+        PidPlugin.getPlugin().lastAPSResult?.let { lastAPSResult ->
             openapsma_result.text = JSONFormatter.format(lastAPSResult.json)
             openapsma_request.text = lastAPSResult.toSpanned()
         }
