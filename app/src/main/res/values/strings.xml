@@ -52,6 +52,7 @@
     <string name="description_ns_client">Synchronizes your data with Nightscout</string>
     <string name="description_ma">State of the algorithm in 2016</string>
     <string name="description_ama">State of the algorithm in 2017</string>
+    <string name="description_dbc">Commande modifié selon les recherches du LS2N</string>
     <string name="description_smb">Most recent algorithm for advanced users</string>
     <string name="description_overview">Displays the current state of your loop and buttons for most common actions</string>
     <string name="description_persistent_notification">Shows an ongoing notification with a short overview of what your loop is doing</string>
