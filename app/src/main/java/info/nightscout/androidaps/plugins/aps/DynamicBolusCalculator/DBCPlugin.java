@@ -59,10 +59,10 @@ public class DBCPlugin extends PluginBase implements APSInterface {
         super(new PluginDescription()
                 .mainType(PluginType.APS)
                 .fragmentClass(DBCFragment.class.getName())
-                .pluginName(R.string.openapsama)
-                .shortName(R.string.oaps_shortname)
-                .preferencesId(R.xml.pref_openapsama)
-                .description(R.string.description_ama)
+                .pluginName(R.string.dynamicboluscalculator)
+                .shortName(R.string.dbc_shortname)
+                .preferencesId(R.xml.pref_dbc)
+                .description(R.string.description_dbc)
         );
     }
 
