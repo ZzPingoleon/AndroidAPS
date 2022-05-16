@@ -56,7 +56,7 @@ object ManualPlugin : PluginBase(PluginDescription()
     }
 
     override fun specialEnableCondition(): Boolean {
-        return isRunningTest()
+        return true
     }
 
     override fun handleNewData(intent: Intent) {
