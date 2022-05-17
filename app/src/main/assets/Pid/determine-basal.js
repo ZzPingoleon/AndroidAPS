@@ -16,9 +16,6 @@
 //import "app/src/main/java/info/nightscout/androidaps/MainApp"
 
 //variables gloables:
-var x2=0.0;
-var x3=0.0;
-var u_prec=0.0;
 var bg_prec=100;
 var erreur=0.0;
 var sum_erreur=0.0;
