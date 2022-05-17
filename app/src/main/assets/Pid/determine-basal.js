@@ -242,6 +242,12 @@ var determine_basal = function determine_basal(glucose_status, currenttemp, iob_
       return tempBasalFunctions.setTempBasal(insuline, 30, profile, rT, currenttemp);
     }
 
+    if (Math.abs(currenttemp.rate-insuline)>0.2){
+      rt.reason="L'insuline estimé de "+insuline+" U/h doit être mise en oeuvre"
+      return tempBasalFunctions.setTempBasal(insuline,10,profile,rt,currenttemp);
+    }
+  
+  
     // generate predicted future BGs based on IOB, COB, and current absorption rate
 
     var COBpredBGs = [];
