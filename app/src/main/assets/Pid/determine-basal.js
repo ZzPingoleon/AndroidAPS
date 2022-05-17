@@ -19,6 +19,9 @@
 var x2=0.0;
 var x3=0.0;
 var u_prec=0.0;
+var bg_prec=100;
+var erreur=0.0;
+var sum_erreur=0.0;
 
 var round_basal = require('../round-basal')
 
@@ -208,44 +211,20 @@ var determine_basal = function determine_basal(glucose_status, currenttemp, iob_
    
   
     var u_b=profile.Ub;
-    var cf=profile.CF;
-    var cir=profile.CIR;
-    var dia=profile.DIA_aps;
-  
-    var k_d=0.85;
-    var k_i=50;
-    var ti=60;
-    var k_c=1;
+ 
     var bg_ref=100;
     var bg_critique=50;
+  
+    //Gains du correcteur Proportionnel-Intégral-Dérivé
+    var gain_proportionnel=0.001;
+    var tau_i=12.5;
+    var tau_d=3.125;
+  
+    erreur=bg-bg_ref;
+    sum_erreur=sum_erreur+erreur;
+  
+    var insuline=u_b+gain_proportionnel*((erreur)+1/tau_i*sum_erreur+tau_d*(bg-bg_prec));
    
-  
-    k_d=u_b*cf;
-    k_i=cf;
-    k_c=cf/cir;
-    ti=dia;
-  
-    //observateur d'état:
-    var L1=profile.L1;
-    var L2=profile.L2;
-    var te=5;
-
-    var debit_basal=k_d/k_i;
-    var insuline_basal=debit_basal;
-  
-    
-    var insuline=(bg-bg_ref)/k_i-ti*(x2+x3);
-  
-    if (bg<target_bg){
-      insuline=0;
-    }
-  
-  
-    insuline=insuline+insuline_basal;
-    if (meal_data.carbs>0){
-      insuline=insuline+meal_data.carbs/(k_i/k_c);
-    }
-  
     if (bg<bg_critique){
       insuline=0;
     }
@@ -253,25 +232,16 @@ var determine_basal = function determine_basal(glucose_status, currenttemp, iob_
       insuline=0;
     }
   
-    //MainApp.setx2((1-te/ti)*MainApp.getx2() + te/ti*MainApp.getx3() - te*L1*bg);
-    x2=(1-te/ti)*x2 + te/ti*x3 - te*L1*bg;
-    if (x3==0.0){
-      x2=0.0;
-    }
-  
-    x3=(1-te/ti)*x3 + te/ti*u_prec - te*L2*bg;
-    if ((u_prec<=insuline_basal)&&(insuline<=insuline_basal)){
-      x3=0.0;
-    }
-  
-    u_prec=insuline;
+     
+    
+    bg_prec=bg;
   
   
     var currentDate=new Date();
     var currentMinute=currentDate.getMinutes();
   
-    if (currentMinute%15==0){
-      rT.reason="15 minutes passées"
+    if (currentMinute%5==0){
+      rT.reason="5 minutes passées"
       return tempBasalFunctions.setTempBasal(insuline, 30, profile, rT, currenttemp);
     }
 
