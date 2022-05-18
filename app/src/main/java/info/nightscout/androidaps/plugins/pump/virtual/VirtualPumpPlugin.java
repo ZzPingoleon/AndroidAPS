@@ -82,7 +82,7 @@ public class VirtualPumpPlugin extends PluginBase implements PumpInterface {
         pumpDescription.isTempBasalCapable = true;
         pumpDescription.tempBasalStyle = PumpDescription.PERCENT | PumpDescription.ABSOLUTE;
 
-        pumpDescription.maxTempPercent = 500;
+        pumpDescription.maxTempPercent = 10000; //500
         pumpDescription.tempPercentStep = 10;
 
         pumpDescription.tempDurationStep = 30;
@@ -129,7 +129,7 @@ public class VirtualPumpPlugin extends PluginBase implements PumpInterface {
                 .observeOn(Schedulers.io())
                 .subscribe(event -> {
                     if (event.isChanged(R.string.key_virtualpump_type))
-                        refreshConfiguration();
+                        refreshConfiguration();   
                 }, FabricPrivacy::logException)
         );
         refreshConfiguration();
