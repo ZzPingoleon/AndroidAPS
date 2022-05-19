@@ -1716,6 +1716,9 @@
     <string name="description_source_randombg2">Generate random BG data (2) </string>
     <string name="randombg3">Random BG3</string>
     <string name="description_source_randombg3">Generate random BG data (3) </string>
+    <string name="smalloscillation">Small Oscillation</string>
+    <string name="smalloscillation_short">BG Oscil.</string>
+    <string name="description_source_smalloscillation">Generate sinus oscillation near target </string>
     <string name="constantentry">Constant entry</string>
     <string name="description_source_constantentry">Generate a constant BG data </string>
     <string name="constantentry_short">CST</string>
