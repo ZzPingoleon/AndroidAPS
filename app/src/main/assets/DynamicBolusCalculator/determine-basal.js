@@ -270,8 +270,8 @@ var determine_basal = function determine_basal(glucose_status, currenttemp, iob_
     var currentDate=new Date();
     var currentMinute=currentDate.getMinutes();
   
-    if (currentMinute%15==0){
-      rT.reason="15 minutes passées"
+    if (currentMinute%5==0){
+      rT.reason="5 minutes passées"
       return tempBasalFunctions.setTempBasal(insuline, 30, profile, rT, currenttemp);
     }
 
