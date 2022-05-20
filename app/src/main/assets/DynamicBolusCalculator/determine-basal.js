@@ -70,8 +70,7 @@ var determine_basal = function determine_basal(glucose_status, currenttemp, iob_
         }
     }
   
-    profile.current_basal=1;
-    profile.max_basal=2;
+    
 
     var bg = glucose_status.glucose;
     // TODO: figure out how to use raw isig data to estimate BG
