@@ -221,27 +221,35 @@ public class DetermineBasalAdapterAMAJS {
         }
         
         Double L1_default=-0.0001;
-        mProfile.put("L1", SP.getDouble(R.string.key_openapsama_L1, L1_default));
-        
         Double L2_default=-0.0001;
-        mProfile.put("L2", SP.getDouble(R.string.key_openapsama_L2, L2_default));
-        
         Double Ub_default=0.017;
-        mProfile.put("Ub", SP.getDouble(R.string.key_openapsama_Ub, Ub_default));
-        
         Double CF_default=50.0;
-        mProfile.put("CF", SP.getDouble(R.string.key_openapsama_CF, CF_default));
-        
         Double CIR_default=500.0;
-        mProfile.put("CIR", SP.getDouble(R.string.key_openapsama_CIR, CIR_default));
-        
         Double DIA_default=60.0;
-        mProfile.put("DIA_aps", SP.getDouble(R.string.key_openapsama_DIA, DIA_default));
-        
         Double max_basal=5.0;
+        
+        
+        mProfile.put("Ub", SP.getDouble(R.string.key_openapsama_Ub, Ub_default));
+                
+        mProfile.put("CF", SP.getDouble(R.string.key_openapsama_CF, CF_default));
+                
+        mProfile.put("CIR", SP.getDouble(R.string.key_openapsama_CIR, CIR_default));
+                
+        mProfile.put("DIA_aps", SP.getDouble(R.string.key_openapsama_DIA, DIA_default));
+                
         mProfile.put("max_basal", SP.getDouble(R.string.key_openapsama_max_basal, max_basal));
         
         //mProfile.put("current_basal", SP.getDouble(R.string.key_openapsama_Ub, Ub_default));
+        
+        if ((mProfile.getDouble("Ub")==0.017)&&(mProfile.getDouble("CF")==50)&&(mProfile.getDouble("CIR")==500)){
+            L1_default=-0.0072;
+            L2_default=-0.0029;
+        }
+        
+        mProfile.put("L1", SP.getDouble(R.string.key_openapsama_L1, L1_default));
+                
+        mProfile.put("L2", SP.getDouble(R.string.key_openapsama_L2, L2_default));
+        
 
         if (ProfileFunctions.getSystemUnits().equals(Constants.MMOL)) {
             mProfile.put("out_units", "mmol/L");
