@@ -318,5 +318,144 @@ public class DetermineBasalAdapterAMAJS {
         }
         return string;
     }
+    
+    
+    public void setData_calibration(Profile profile,
+                        double maxIob,
+                        double maxBasal,
+                        double minBg,
+                        double maxBg,
+                        double targetBg,
+                        double basalrate,
+                        IobTotal[] iobArray,
+                        GlucoseStatus glucoseStatus,
+                        MealData mealData,
+                        double autosensDataRatio,
+                        boolean tempTargetSet) throws JSONException {
+
+        mProfile = new JSONObject();
+        mProfile.put("max_iob", maxIob);
+        mProfile.put("dia", Math.min(profile.getDia(), 3d));
+        mProfile.put("type", "current");
+        //mProfile.put("max_daily_basal", profile.getMaxDailyBasal());
+        mProfile.put("max_daily_basal", 100);
+        //mProfile.put("max_basal", maxBasal);
+        mProfile.put("min_bg", minBg);
+        mProfile.put("max_bg", maxBg);
+        mProfile.put("target_bg", targetBg);
+        mProfile.put("carb_ratio", profile.getIc());
+        mProfile.put("sens", profile.getIsfMgdl());
+        mProfile.put("max_daily_safety_multiplier", SP.getInt(R.string.key_openapsama_max_daily_safety_multiplier, 3));
+        mProfile.put("current_basal_safety_multiplier", SP.getDouble(R.string.key_openapsama_current_basal_safety_multiplier, 4d));
+        mProfile.put("skip_neutral_temps", true);
+        mProfile.put("current_basal", basalrate);
+        mProfile.put("temptargetSet", tempTargetSet);
+        mProfile.put("autosens_adjust_targets", SP.getBoolean(R.string.key_openapsama_autosens_adjusttargets, true));
+        //align with max-absorption model in AMA sensitivity
+        if (mealData.usedMinCarbsImpact > 0) {
+            mProfile.put("min_5m_carbimpact", mealData.usedMinCarbsImpact);
+        } else {
+            mProfile.put("min_5m_carbimpact", SP.getDouble(R.string.key_openapsama_min_5m_carbimpact, SMBDefaults.min_5m_carbimpact));
+        }
+        
+        Double L1_default=-0.0001;
+        Double L2_default=-0.0001;
+        Double Ub_default=0.017;
+        Double CF_default=50.0;
+        Double CIR_default=500.0;
+        Double DIA_default=60.0;
+        Double max_basal=5.0;
+        
+        
+        mProfile.put("Ub", SP.getDouble(R.string.key_openapsama_Ub, Ub_default));
+                
+        mProfile.put("CF", SP.getDouble(R.string.key_openapsama_CF, CF_default));
+                
+        mProfile.put("CIR", SP.getDouble(R.string.key_openapsama_CIR, CIR_default));
+                
+        mProfile.put("DIA_aps", SP.getDouble(R.string.key_openapsama_DIA, DIA_default));
+                
+        mProfile.put("max_basal", SP.getDouble(R.string.key_openapsama_max_basal, max_basal));
+        
+        //mProfile.put("current_basal", SP.getDouble(R.string.key_openapsama_Ub, Ub_default));
+        
+        if ((mProfile.getDouble("Ub")==0.017)&&(mProfile.getDouble("CF")==50)&&(mProfile.getDouble("CIR")==500)){
+            L1_default=-0.0072;
+            L2_default=-0.0029;
+        }
+        
+        if ((mProfile.getDouble("Ub")==0.012)&&(mProfile.getDouble("CF")==48.75)&&(mProfile.getDouble("CIR")==10)){
+            L1_default=-0.0074;
+            L2_default=-0.003;
+        }
+        
+        if ((mProfile.getDouble("Ub")==0.01)&&(mProfile.getDouble("CF")==40)&&(mProfile.getDouble("CIR")==3.5)){
+            L1_default=-0.009;
+            L2_default=-0.0036;
+        }
+        
+        if ((mProfile.getDouble("Ub")==0.0128)&&(mProfile.getDouble("CF")==70)&&(mProfile.getDouble("CIR")==8.5)){
+            L1_default=-0.0051;
+            L2_default=-0.0021;
+        }
+        
+        if ((mProfile.getDouble("Ub")==0.018)&&(mProfile.getDouble("CF")==30)&&(mProfile.getDouble("CIR")==7)){
+            L1_default=-0.012;
+            L2_default=-0.0048;
+        }
+        
+        if ((mProfile.getDouble("Ub")==0.0325)&&(mProfile.getDouble("CF")==33.3)&&(mProfile.getDouble("CIR")==5.85)){
+            L1_default=-0.0108;
+            L2_default=-0.0043;
+        }
+        
+        mProfile.put("L1", SP.getDouble(R.string.key_openapsama_L1, L1_default));
+                
+        mProfile.put("L2", SP.getDouble(R.string.key_openapsama_L2, L2_default));
+        
+
+        if (ProfileFunctions.getSystemUnits().equals(Constants.MMOL)) {
+            mProfile.put("out_units", "mmol/L");
+        }
+
+        long now = System.currentTimeMillis();
+        TemporaryBasal tb = TreatmentsPlugin.getPlugin().getTempBasalFromHistory(now);
+
+        mCurrentTemp = new JSONObject();
+        mCurrentTemp.put("temp", "absolute");
+        mCurrentTemp.put("duration", tb != null ? tb.getPlannedRemainingMinutes() : 0);
+        mCurrentTemp.put("rate", tb != null ? tb.tempBasalConvertedToAbsolute(now, profile) : 0d);
+
+        // as we have non default temps longer than 30 mintues
+        TemporaryBasal tempBasal = TreatmentsPlugin.getPlugin().getTempBasalFromHistory(System.currentTimeMillis());
+        if (tempBasal != null) {
+            mCurrentTemp.put("minutesrunning", tempBasal.getRealDuration());
+        }
+
+        mIobData = IobCobCalculatorPlugin.convertToJSONArray(iobArray);
+
+        mGlucoseStatus = new JSONObject();
+        mGlucoseStatus.put("glucose", glucoseStatus.glucose);
+
+        if (SP.getBoolean(R.string.key_always_use_shortavg, false)) {
+            mGlucoseStatus.put("delta", glucoseStatus.short_avgdelta);
+        } else {
+            mGlucoseStatus.put("delta", glucoseStatus.delta);
+        }
+        mGlucoseStatus.put("short_avgdelta", glucoseStatus.short_avgdelta);
+        mGlucoseStatus.put("long_avgdelta", glucoseStatus.long_avgdelta);
+
+        mMealData = new JSONObject();
+        mMealData.put("carbs", mealData.carbs);
+        mMealData.put("boluses", mealData.boluses);
+        mMealData.put("mealCOB", mealData.mealCOB);
+
+        if (MainApp.getConstraintChecker().isAutosensModeEnabled().value()) {
+            mAutosensData = new JSONObject();
+            mAutosensData.put("ratio", autosensDataRatio);
+        } else {
+            mAutosensData = null;
+        }
+    }
 
 }
