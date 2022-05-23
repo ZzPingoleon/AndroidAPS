@@ -1722,6 +1722,7 @@
     <string name="constantentry">Constant entry</string>
     <string name="description_source_constantentry">Generate a constant BG data </string>
     <string name="constantentry_short">CST</string>
+    
     <string name="tools">Tools</string>
     <string name="show_calculation">Show calcuation</string>
     <string name="error">Error</string>
