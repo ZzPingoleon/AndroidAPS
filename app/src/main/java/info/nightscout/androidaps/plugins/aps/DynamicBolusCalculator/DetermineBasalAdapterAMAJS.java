@@ -358,8 +358,8 @@ public class DetermineBasalAdapterAMAJS {
             mProfile.put("min_5m_carbimpact", SP.getDouble(R.string.key_openapsama_min_5m_carbimpact, SMBDefaults.min_5m_carbimpact));
         }
         
-        Double L1_default=-0.0001;
-        Double L2_default=-0.0001;
+        Double L1_calib=-0.0001;
+        Double L2_calib=-0.0001;
         Double Ub_default=0.017;
         Double CF_default=50.0;
         Double CIR_default=500.0;
@@ -380,38 +380,38 @@ public class DetermineBasalAdapterAMAJS {
         //mProfile.put("current_basal", SP.getDouble(R.string.key_openapsama_Ub, Ub_default));
         
         if ((mProfile.getDouble("Ub")==0.017)&&(mProfile.getDouble("CF")==50)&&(mProfile.getDouble("CIR")==500)){
-            L1_default=-0.0072;
-            L2_default=-0.0029;
+            L1_calib=-0.0072;
+            L2_calib=-0.0029;
         }
         
         if ((mProfile.getDouble("Ub")==0.012)&&(mProfile.getDouble("CF")==48.75)&&(mProfile.getDouble("CIR")==10)){
-            L1_default=-0.0074;
-            L2_default=-0.003;
+            L1_calib=-0.0074;
+            L2_calib=-0.003;
         }
         
         if ((mProfile.getDouble("Ub")==0.01)&&(mProfile.getDouble("CF")==40)&&(mProfile.getDouble("CIR")==3.5)){
-            L1_default=-0.009;
-            L2_default=-0.0036;
+            L1_calib=-0.009;
+            L2_calib=-0.0036;
         }
         
         if ((mProfile.getDouble("Ub")==0.0128)&&(mProfile.getDouble("CF")==70)&&(mProfile.getDouble("CIR")==8.5)){
-            L1_default=-0.0051;
-            L2_default=-0.0021;
+            L1_calib=-0.0051;
+            L2_calib=-0.0021;
         }
         
         if ((mProfile.getDouble("Ub")==0.018)&&(mProfile.getDouble("CF")==30)&&(mProfile.getDouble("CIR")==7)){
-            L1_default=-0.012;
-            L2_default=-0.0048;
+            L1_calib=-0.012;
+            L2_calib=-0.0048;
         }
         
         if ((mProfile.getDouble("Ub")==0.0325)&&(mProfile.getDouble("CF")==33.3)&&(mProfile.getDouble("CIR")==5.85)){
-            L1_default=-0.0108;
-            L2_default=-0.0043;
+            L1_calib=-0.0108;
+            L2_calib=-0.0043;
         }
         
-        mProfile.put("L1", SP.getDouble(R.string.key_openapsama_L1, L1_default));
+        mProfile.put("L1", L1_calib);
                 
-        mProfile.put("L2", SP.getDouble(R.string.key_openapsama_L2, L2_default));
+        mProfile.put("L2", L2_calib);
         
 
         if (ProfileFunctions.getSystemUnits().equals(Constants.MMOL)) {
