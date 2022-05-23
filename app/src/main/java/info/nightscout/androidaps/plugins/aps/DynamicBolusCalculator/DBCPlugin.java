@@ -202,6 +202,9 @@ public class DBCPlugin extends PluginBase implements APSInterface {
             FabricPrivacy.logException(e);
             return;
         }
+        
+        SwitchPreference pref = (SwitchPreference) findPreference(getString(R.string.key_openapsama_useautosens));
+        pref.isChecked();
 
 
         DetermineBasalResultAMA determineBasalResultAMA = determineBasalAdapterAMAJS.invoke();
