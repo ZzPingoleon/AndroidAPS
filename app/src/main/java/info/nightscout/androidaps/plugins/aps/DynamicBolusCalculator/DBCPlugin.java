@@ -205,8 +205,8 @@ public class DBCPlugin extends PluginBase implements APSInterface {
             return;
         }
         
-        SwitchPreference pref = (SwitchPreference) findPreference(getString(R.string.key_openapsama_useautosens));
-        if (pref.isChecked()){
+        
+        if (SP.getBoolean(R.string.key_openapsama_useautosens, false)){
             determineBasalAdapterAMAJS.setData_calibration(profile, maxIob, maxBasal, minBg, maxBg, targetBg, ConfigBuilderPlugin.getPlugin().getActivePump().getBaseBasalRate(), iobArray, glucoseStatus, mealData,
                     lastAutosensResult.ratio, //autosensDataRatio
                     isTempTarget
