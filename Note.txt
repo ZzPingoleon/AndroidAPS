@@ -1,3 +1,5 @@
+*Note by ls2n edition file*
+
 This version of Android APS was edited in order to integrate a new insulin decisional algorithm called "Dynamic Bolus Calculator", an insulino-therapetical friendly command.
 
 
