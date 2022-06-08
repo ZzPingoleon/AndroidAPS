@@ -1,3 +1,5 @@
+*Note by ls2n edition file*
+
 This directory contains the main architecture of the Android APS application.
 
 The main file where every module is connected is in the "MainApp.java"
