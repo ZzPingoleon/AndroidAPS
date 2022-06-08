@@ -1,0 +1,12 @@
+This directory contains the main architecture of the Android APS application.
+
+The main file where every module is connected is in the "MainApp.java"
+
+Then, every aspect of the application has to be coded as a Plugin, contianed in the "plugins" directory.
+
+The "plugins/source" was edited with some new entry added in order to simulate more simply our command with the Android APS's virtual pump. 
+As a result a sinus oscillation entry was added (between 70 and 180 mg/dL) as well as a small oscillation around the target.
+An other entry was added which enables the user to chose a constant value for the glycemia and he can change it whenever he wants (manual entry).
+
+In the "plugins/aps" directory, plugins corresponding to the new algorithms (Dynamic Bolus Calculator and PID). They invoke the files in the "assets" with 
+the algorithms source codes.
