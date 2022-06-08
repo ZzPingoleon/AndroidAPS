@@ -5,3 +5,4 @@ In the "values" directory are all variables that will be called back in the whol
 In the "xml" directory are the interfaces monitoring of all application menus.
 
 Some values and option interfaces were added and changed for the Dynamic Bolus Calculator
++The variables can all be traduced in other languages than English.
