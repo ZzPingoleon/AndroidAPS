@@ -5,3 +5,4 @@ All changes are described in the /app and notes document are attached to underst
 
 
 Main files of core Android APS are in the AndroidAPS/app/src/main directory
+A version of the application .apk was uploaded.
