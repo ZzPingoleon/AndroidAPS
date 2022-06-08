@@ -11,6 +11,11 @@
   LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
   THE SOFTWARE.
+  
+  
+  PID algorithm. The code is a modification of the original oref0 AndroidAps code.
+  
+  
 */
 
 //import "app/src/main/java/info/nightscout/androidaps/MainApp"
@@ -220,13 +225,13 @@ var determine_basal = function determine_basal(glucose_status, currenttemp, iob_
     erreur=bg-bg_ref;
     sum_erreur=sum_erreur+erreur;
   
-    var insuline=u_b+gain_proportionnel*((erreur)+1/tau_i*sum_erreur+tau_d*(bg-bg_prec));
+    var insuline=u_b+gain_proportionnel*((erreur)+1/tau_i*sum_erreur+tau_d*(bg-bg_prec)); //Loi du Proportionnel-Intégral-Dérivé
    
     if (bg<bg_critique){
-      insuline=0;
+      insuline=0; //Seuil nécessaire en cas de glycémie critique
     }
     if (insuline<0){
-      insuline=0;
+      insuline=0; //Annuler toute commande négative (impossible)
     }
   
      
