@@ -1,3 +1,5 @@
+*Note by ls2n edition file*
+
 This "assets" diretory contains all the algorihtms code for the calculation of insulin changes. 
 
 Language used : Javascript
