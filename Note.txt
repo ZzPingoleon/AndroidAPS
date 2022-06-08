@@ -8,4 +8,4 @@ Main files of core Android APS are in the AndroidAPS/app/src/main directory
 A version of the application .apk was uploaded.
 
 
-A Python scipt with the code of the algorithm is issued.
+A Python script with the code of the algorithm is issued.
