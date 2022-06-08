@@ -1,1 +1,7 @@
 This "assets" diretory contains all the algorihtms code for the calculation of insulin changes. 
+
+Language used : Javascript
+
+Commited new algorithms : PID and Dynamic Bolus Calculator.
+
+The main algorithm is contained in each "determine-basal.js" source code.
