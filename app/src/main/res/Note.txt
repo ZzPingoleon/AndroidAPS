@@ -1,3 +1,5 @@
+*Note by ls2n edition file*
+
 This "res" diretory contains all code file necessary for the Android application interface.
 
 In the "values" directory are all variables that will be called back in the whole application. It is used to describe names, or global variables.
