@@ -223,7 +223,7 @@ public class DetermineBasalAdapterAMAJS {
             mProfile.put("min_5m_carbimpact", SP.getDouble(R.string.key_openapsama_min_5m_carbimpact, SMBDefaults.min_5m_carbimpact));
         }
         
-        //Patient par défaut, dont les gains d'observateur optimisés sont donnés
+        //Patient par défaut, dont les gains d'observateur optimisés ont été identifiés au préalable:
         Double L1_default=-0.0001;
         Double L2_default=-0.0001;
         Double Ub_default=0.017;
@@ -323,6 +323,8 @@ public class DetermineBasalAdapterAMAJS {
         return string;
     }
     
+    
+    //setData_calibration est la fonction utilisé dans le cas où l'option de calibration est activée
     
     public void setData_calibration(Profile profile,
                         double maxIob,
