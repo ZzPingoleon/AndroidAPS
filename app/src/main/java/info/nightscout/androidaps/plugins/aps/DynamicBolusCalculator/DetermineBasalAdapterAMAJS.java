@@ -223,6 +223,7 @@ public class DetermineBasalAdapterAMAJS {
             mProfile.put("min_5m_carbimpact", SP.getDouble(R.string.key_openapsama_min_5m_carbimpact, SMBDefaults.min_5m_carbimpact));
         }
         
+        //Patient par défaut, dont les gains d'observateur optimisés sont donnés
         Double L1_default=-0.0001;
         Double L2_default=-0.0001;
         Double Ub_default=0.017;
