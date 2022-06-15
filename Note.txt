@@ -2,6 +2,8 @@
 
 This version of Android APS was edited in order to integrate a new insulin decisional algorithm called "Dynamic Bolus Calculator", an insulino-therapetical friendly command.
 
+Orginal version is available at : https://github.com/nightscout/AndroidAPS
+
 
 All changes are described in the /app and notes document are attached to understand where threre are changes and what are the roles.
 
