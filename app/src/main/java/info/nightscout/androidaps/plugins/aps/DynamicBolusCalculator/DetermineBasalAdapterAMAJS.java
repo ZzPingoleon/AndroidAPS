@@ -1,3 +1,6 @@
+//La fonction "invoke" permet de donner au code l'accès aux programmes contenus dans le fichier "asset" et contenant tout l'algorithme de la boucle fermé qui doit être codé
+//La fonction "setData" permet de définir les paramètres contenus dans le profile et donc d'ajouter des élèments en variables globales comme les gains de l'observateur.
+
 package info.nightscout.androidaps.plugins.aps.DynamicBolusCalculator;
 
 import org.json.JSONArray;
