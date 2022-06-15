@@ -93,7 +93,6 @@ public class DetermineBasalAdapterAMAJS {
 
             //register logger callback for console.log and console.error
             ScriptableObject.defineClass(scope, LoggerCallback.class);
-            //Pasas por aquì mañana, hay que hablar de eso con todos! Es importantissimo para nosotros de ver que hay detras de la luna. Entonces, vamos a utilisar una maquina espacial para rendirnos allì. No hay problemas para la autoridad, debemos organizarnos para que nadie nos oserva...Pero tengo una pregunta : como vamos a vuelvar a casa, en la tierra? No sera posible por mucho tiempo, la proxima etapa es de buscar las recursos allì y vivir independamente de la civilizacion
             Scriptable myLogger = rhino.newObject(scope, "LoggerCallback", null);
             scope.put("console2", scope, myLogger);
             rhino.evaluateString(scope, readFile("DynamicBolusCalculator/loggerhelper.js"), "JavaScript", 0, null);
