@@ -522,6 +522,14 @@
     <string name="openapsama_DIA_summary">Default value: 60. DIA, durée de l\'insuline active en min.</string>
     <string name="openapsama_max_basal" translatable="false">Max basal</string>
     <string name="openapsama_max_basal_summary">Default value: 5. max_basal.</string>
+    
+    <string name="openapsama_repas" translatable="false">Meal</string>
+    <string name="openapsama_repas_summary">Default value: 0. Meal, quantity of glucides in gramms.</string>
+    <string name="openapsama_heurerepas" translatable="false">MealHour</string>
+    <string name="openapsama_heurerepas_summary">Default value: 0. The hour of the meal</string>
+    <string name="openapsama_minuterepas" translatable="false">MealMinute</string>
+    <string name="openapsama_minuterepas_summary">Default value: 0. Minute of the meal</string>
+    
     <string name="manual_constant" translatable="false">Valeur de BG constante</string>
     <string name="manual_constant_summary">Default value: 100. manual_constant.</string>
     <string name="openapsama_link_to_preferncejson_doc_txt">Attention!\nNormally you do not have to change these values below. Please CLICK HERE and READ the text and make sure you UNDERSTAND it before change any of these values.</string>
@@ -1063,6 +1071,7 @@
     <string name="setupwizard_finish">FINISH</string>
     <string name="setupwizard_language_prompt">Select your language</string>
     <string name="key_language" translatable="false">language</string>
+    
     <string name="key_openapsama_min_5m_carbimpact" translatable="false">openapsama_min_5m_carbimpact</string>
     <string name="key_openapsama_L1" translatable="false">openapsama_L1</string>
     <string name="key_openapsama_L2" translatable="false">openapsama_L2</string>
@@ -1072,6 +1081,10 @@
     <string name="key_openapsama_DIA" translatable="false">openapsama_DIA</string>
     <string name="key_openapsama_max_basal" translatable="false">openapsama_max_basal</string>
     <string name="key_manual_constant" translatable="false">manual_constant</string>
+    <string name="key_openapsama_repas" translatable="false">openapsama_repas</string>
+    <string name="key_openapsama_heurerepas" translatable="false">openapsama_heurerepas</string>
+    <string name="key_openapsama_minuterepas" translatable="false">openapsama_minuterepas</string>
+    
     <string name="boluserrorcode">Asked: %1$.2fU Delivered: %2$.2fU Error code: %3$s</string>
     <string name="firstinsulinincrement">First insulin increment</string>
     <string name="secondinsulinincrement">Second insulin increment</string>
