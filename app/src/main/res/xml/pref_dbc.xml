@@ -145,6 +145,52 @@
             android:defaultValue="false"
             android:key="@string/key_openapsama_calibrationobs"
             android:title="@string/openapsama_calibrationobs" />
+        
+        
+        <!-- Choix d'un repas en grammes de glucides -->
+        <com.andreabaccega.widget.ValidatingEditTextPreference
+            android:defaultValue="0.0"
+            android:dialogMessage="@string/openapsama_repas_summary"
+            android:inputType="numberDecimal"
+            android:key="@string/key_openapsama_repas"
+            android:maxLines="20"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="@string/openapsama_repas"
+            validate:floatmaxNumber="1000000.0"
+            validate:floatminNumber="0.0"
+            validate:testType="floatNumericRange" /> 
+        
+        <!-- Choix de l'heure du repas -->
+        <com.andreabaccega.widget.ValidatingEditTextPreference
+            android:defaultValue="0.0"
+            android:dialogMessage="@string/openapsama_heurerepas_summary"
+            android:inputType="numberDecimal"
+            android:key="@string/key_openapsama_heurerepas"
+            android:maxLines="20"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="@string/openapsama_heurerepas"
+            validate:floatmaxNumber="23.0"
+            validate:floatminNumber="0.0"
+            validate:testType="floatNumericRange" />
+        
+        <!-- Choix de la minute du repas -->
+        <com.andreabaccega.widget.ValidatingEditTextPreference
+            android:defaultValue="0.0"
+            android:dialogMessage="@string/openapsama_minuterepas_summary"
+            android:inputType="numberDecimal"
+            android:key="@string/key_openapsama_minuterepas"
+            android:maxLines="20"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="@string/openapsama_minuterepas"
+            validate:floatmaxNumber="59.0"
+            validate:floatminNumber="0.0"
+            validate:testType="floatNumericRange" />
+        
+        
+        
 
         <PreferenceScreen android:title="@string/advancedsettings_title">
 
