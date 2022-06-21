@@ -146,6 +146,11 @@
             android:key="@string/key_openapsama_calibrationobs"
             android:title="@string/openapsama_calibrationobs" />
         
+        <!-- Ajout d'un switch pour indiquer un repas -->
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="@string/key_openapsama_traitementrepas"
+            android:title="@string/openapsama_traitementrepas" />
         
         <!-- Choix d'un repas en grammes de glucides -->
         <com.andreabaccega.widget.ValidatingEditTextPreference
