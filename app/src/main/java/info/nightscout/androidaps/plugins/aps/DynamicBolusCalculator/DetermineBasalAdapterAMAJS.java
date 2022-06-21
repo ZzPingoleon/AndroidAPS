@@ -258,11 +258,11 @@ public class DetermineBasalAdapterAMAJS {
         
         
         Double repas_default=0.0;
-        Double heurerepas_default=0.0;
+        int heurerepas_default=0;
         Double minuterepas_default=0.0;
         
         mProfile.put("repas", SP.getDouble(R.string.key_openapsama_repas, repas_default));
-        mProfile.put("heure_repas", (int) SP.getDouble(R.string.key_openapsama_heurerepas, heurerepas_default));
+        mProfile.put("heure_repas", SP.getInt(R.string.key_openapsama_heurerepas, heurerepas_default));
         mProfile.put("minute_repas", (int) SP.getDouble(R.string.key_openapsama_minuterepas, minuterepas_default));
         
 
