@@ -170,8 +170,12 @@
             android:maxLines="20"
             android:selectAllOnFocus="true"
             android:singleLine="true"
-            android:title="@string/openapsama_heurerepas" />
-        
+            android:title="@string/openapsama_heurerepas"
+            validate:maxNumber="23"
+            validate:minNumber="0"
+            validate:testType="numericRange" />
+                                                               
+                                                               
         <!-- Choix de la minute du repas -->
         <com.andreabaccega.widget.ValidatingEditTextPreference
             android:defaultValue="0"
@@ -183,8 +187,8 @@
             android:singleLine="true"
             android:title="@string/openapsama_minuterepas"
             validate:maxNumber="59"
-            validate:minNumber="0" />
-        
+            validate:minNumber="0"
+            validate:testType="numericRange" />
         
         
 
