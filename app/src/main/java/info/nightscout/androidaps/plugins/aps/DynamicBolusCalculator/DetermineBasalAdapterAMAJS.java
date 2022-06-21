@@ -216,6 +216,10 @@ public class DetermineBasalAdapterAMAJS {
         mProfile.put("current_basal", basalrate);
         mProfile.put("temptargetSet", tempTargetSet);
         mProfile.put("autosens_adjust_targets", SP.getBoolean(R.string.key_openapsama_autosens_adjusttargets, true));
+        
+        mProfile.put("meal_treatment", SP.getBoolean(R.string.key_openapsama_traitementrepas, false));
+        
+        
         //align with max-absorption model in AMA sensitivity
         if (mealData.usedMinCarbsImpact > 0) {
             mProfile.put("min_5m_carbimpact", mealData.usedMinCarbsImpact);
@@ -368,6 +372,9 @@ public class DetermineBasalAdapterAMAJS {
         mProfile.put("current_basal", basalrate);
         mProfile.put("temptargetSet", tempTargetSet);
         mProfile.put("autosens_adjust_targets", SP.getBoolean(R.string.key_openapsama_autosens_adjusttargets, true));
+        
+        mProfile.put("meal_treatment", SP.getBoolean(R.string.key_openapsama_traitementrepas, false));
+        
         //align with max-absorption model in AMA sensitivity
         if (mealData.usedMinCarbsImpact > 0) {
             mProfile.put("min_5m_carbimpact", mealData.usedMinCarbsImpact);
@@ -429,6 +436,14 @@ public class DetermineBasalAdapterAMAJS {
         mProfile.put("L1", L1_calib);
                 
         mProfile.put("L2", L2_calib);
+        
+        Double repas_default=0.0;
+        int heurerepas_default=0;
+        int minuterepas_default=0;
+        
+        mProfile.put("repas", SP.getDouble(R.string.key_openapsama_repas, repas_default));
+        mProfile.put("heure_repas", SP.getInt(R.string.key_openapsama_heurerepas, heurerepas_default));
+        mProfile.put("minute_repas", SP.getInt(R.string.key_openapsama_minuterepas, minuterepas_default));
         
 
         if (ProfileFunctions.getSystemUnits().equals(Constants.MMOL)) {
