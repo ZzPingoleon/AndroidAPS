@@ -526,9 +526,9 @@
     <string name="openapsama_repas" translatable="false">Meal</string>
     <string name="openapsama_repas_summary">Default value: 0. Meal, quantity of glucides in gramms.</string>
     <string name="openapsama_heurerepas" translatable="false">MealHour</string>
-    <string name="openapsama_heurerepas_summary">Default value: 0. The hour of the meal</string>
+    <string name="openapsama_heurerepas_summary">Default value: 0. The hour of the meal (between 0 and 23)</string>
     <string name="openapsama_minuterepas" translatable="false">MealMinute</string>
-    <string name="openapsama_minuterepas_summary">Default value: 0. Minute of the meal</string>
+    <string name="openapsama_minuterepas_summary">Default value: 0. Minute of the meal (between 0 and 59)</string>
     
     <string name="manual_constant" translatable="false">Valeur de BG constante</string>
     <string name="manual_constant_summary">Default value: 100. manual_constant.</string>
