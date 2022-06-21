@@ -174,17 +174,17 @@
         
         <!-- Choix de la minute du repas -->
         <com.andreabaccega.widget.ValidatingEditTextPreference
-            android:defaultValue="0.0"
+            android:defaultValue="0"
             android:dialogMessage="@string/openapsama_minuterepas_summary"
-            android:inputType="numberDecimal"
+            android:inputType="number"
             android:key="@string/key_openapsama_minuterepas"
             android:maxLines="20"
             android:selectAllOnFocus="true"
             android:singleLine="true"
             android:title="@string/openapsama_minuterepas"
-            validate:floatmaxNumber="59.0"
-            validate:floatminNumber="0.0"
-            validate:testType="floatNumericRange" />
+            validate:integermaxNumber="59"
+            validate:integerminNumber="0"
+            validate:testType="integerNumericRange" />
         
         
         
