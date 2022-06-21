@@ -1737,6 +1737,9 @@
     <string name="constantentry_short">CST</string>
     <string name="key_openapsama_calibrationobs" translatable="false">openapsama_calibrationobs</string>
     <string name="openapsama_calibrationobs">Calibration observateur</string>
+    <string name="key_openapsama_traitementrepas" translatable="false">openapsama_traitementrepas</string>
+    <string name="openapsama_traitementrepas">Meal treatment</string>
+    <string name="openapsama_traitementrepas_summary">Activate if there is a meal (at least 30 min before)</string>
     
     <string name="tools">Tools</string>
     <string name="show_calculation">Show calcuation</string>
