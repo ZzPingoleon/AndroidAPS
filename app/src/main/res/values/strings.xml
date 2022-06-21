@@ -518,7 +518,7 @@
     <string name="openapsama_CF_summary">Default value: 50. CF, compensatoire en mg/dL/U.</string>
     <string name="openapsama_CIR" translatable="false">CIR</string>
     <string name="openapsama_CIR_summary">Default value: 500. CIR, Carbo-to-Insulino-Ratio en g/U.</string>
-    <string name="openapsama_DIA" translatable="false">Ub</string>
+    <string name="openapsama_DIA" translatable="false">DIA</string>
     <string name="openapsama_DIA_summary">Default value: 60. DIA, durée de l\'insuline active en min.</string>
     <string name="openapsama_max_basal" translatable="false">Max basal</string>
     <string name="openapsama_max_basal_summary">Default value: 5. max_basal.</string>
