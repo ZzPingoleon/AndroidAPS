@@ -150,7 +150,8 @@
         <SwitchPreference
             android:defaultValue="false"
             android:key="@string/key_openapsama_traitementrepas"
-            android:title="@string/openapsama_traitementrepas" />
+            android:title="@string/openapsama_traitementrepas"
+            android:summary="@string/openapsama_traitementrepas_summary"/>
         
         <!-- Choix d'un repas en grammes de glucides -->
         <com.andreabaccega.widget.ValidatingEditTextPreference
