@@ -257,6 +257,18 @@ var determine_basal = function determine_basal(glucose_status, currenttemp, iob_
           insuline=insuline+meal_data.carbs/(k_i/k_c);
         }
       }
+      else{
+        if (profile.heure_repas>0){
+          if (currentMinute==60+(profile.minute_repas-30) && currentHour==profile.heure_repas-1){
+            insuline=insuline+meal_data.carbs/(k_i/k_c);
+          }
+        }
+        else{
+          if (currentMinute==60+(profile.minute_repas-30) && currentHour==23){
+            insuline=insuline+meal_data.carbs/(k_i/k_c);
+          }
+        }
+      }
       
     }
     
