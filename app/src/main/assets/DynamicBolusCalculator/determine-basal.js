@@ -206,6 +206,10 @@ var determine_basal = function determine_basal(glucose_status, currenttemp, iob_
     else { basaliob = iob_data.iob - iob_data.bolussnooze; }
    
   
+    var currentDate=new Date();
+    var currentHour=currentDate.getHours();
+    var currentMinute=currentDate.getMinutes();
+  
     var u_b=profile.Ub;
     var cf=profile.CF;
     var cir=profile.CIR;
@@ -241,9 +245,21 @@ var determine_basal = function determine_basal(glucose_status, currenttemp, iob_
   
   
     insuline=insuline+insuline_basal;
-    if (meal_data.carbs>0){
-      insuline=insuline+meal_data.carbs/(k_i/k_c);
+  
+    //if (meal_data.carbs>0){
+    //  insuline=insuline+meal_data.carbs/(k_i/k_c);
+    //}
+  
+    if (profile.meal_treatment){
+      //gérer une prise en compte à l'avance de 30 minutes, remplacer 30 par une variable de temps autre (code à ajuster si temps>59) si nécessaire
+      if (profile.minute_repas>=30){
+        if (currentMinute==profile.minute_repas-30 && currentHour==profile.heure_repas){
+          insuline=insuline+meal_data.carbs/(k_i/k_c);
+        }
+      }
+      
     }
+    
   
     if (bg<bg_critique){
       insuline=0;
@@ -266,8 +282,7 @@ var determine_basal = function determine_basal(glucose_status, currenttemp, iob_
     u_prec=insuline;
   
   
-    var currentDate=new Date();
-    var currentMinute=currentDate.getMinutes();
+    
   
     if (currentMinute%5==0){
       rT.reason="5 minutes passées"
