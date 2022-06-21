@@ -163,17 +163,14 @@
         
         <!-- Choix de l'heure du repas -->
         <com.andreabaccega.widget.ValidatingEditTextPreference
-            android:defaultValue="0.0"
+            android:defaultValue="0"
             android:dialogMessage="@string/openapsama_heurerepas_summary"
-            android:inputType="numberDecimal"
+            android:inputType="number"
             android:key="@string/key_openapsama_heurerepas"
             android:maxLines="20"
             android:selectAllOnFocus="true"
             android:singleLine="true"
-            android:title="@string/openapsama_heurerepas"
-            validate:floatmaxNumber="23.0"
-            validate:floatminNumber="0.0"
-            validate:testType="floatNumericRange" />
+            android:title="@string/openapsama_heurerepas" />
         
         <!-- Choix de la minute du repas -->
         <com.andreabaccega.widget.ValidatingEditTextPreference
