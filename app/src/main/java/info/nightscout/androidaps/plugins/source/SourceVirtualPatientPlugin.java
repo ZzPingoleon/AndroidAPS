@@ -20,25 +20,25 @@ import info.nightscout.androidaps.logging.BundleLogger;
 /**
  * Created by ls2n on 05.07.2022.
  */
-public class SourceXdripPluginManual extends PluginBase implements BgSourceInterface {
+public class SourceVirtualPatientPlugin extends PluginBase implements BgSourceInterface {
     private static Logger log = LoggerFactory.getLogger(L.BGSOURCE);
 
-    private static SourceXdripPluginManual plugin = null;
+    private static SourceVirtualPatientPlugin plugin = null;
 
     boolean advancedFiltering;
 
-    public static SourceXdripPluginManual getPlugin() {
+    public static SourceVirtualPatientPlugin getPlugin() {
         if (plugin == null)
-            plugin = new SourceXdripPluginManual();
+            plugin = new SourceVirtualPatientPlugin();
         return plugin;
     }
 
-    private SourceXdripPluginManual() {
+    private SourceVirtualPatientPlugin() {
         super(new PluginDescription()
                 .mainType(PluginType.BGSOURCE)
                 .fragmentClass(BGSourceFragment.class.getName())
-                .pluginName(R.string.xdrip)
-                .description(R.string.description_source_xdrip_manual)
+                .pluginName(R.string.virtual_patient)
+                .description(R.string.description_source_virtual_patient)
         );
     }
 
@@ -56,7 +56,7 @@ public class SourceXdripPluginManual extends PluginBase implements BgSourceInter
         if (bundle == null) return;
 
         if (L.isEnabled(L.BGSOURCE))
-            log.debug("Received xDrip data: " + BundleLogger.log(intent.getExtras()));
+            log.debug("Received data: " + BundleLogger.log(intent.getExtras()));
 
         BgReading bgReading = new BgReading();
 
@@ -64,11 +64,11 @@ public class SourceXdripPluginManual extends PluginBase implements BgSourceInter
         bgReading.direction = bundle.getString(Intents.EXTRA_BG_SLOPE_NAME);
         bgReading.date = bundle.getLong(Intents.EXTRA_TIMESTAMP);
         bgReading.raw = bundle.getDouble(Intents.EXTRA_RAW);
-        String source = "Manual Xdrip application";
-        SourceXdripPluginManual.getPlugin().setSource(source);
-        MainApp.getDbHelper().createIfNotExists(bgReading, "XDRIP");
+        String source = "Virtual patient application";
+        SourceVirtualPatientPlugin.getPlugin().setSource(source);
+        MainApp.getDbHelper().createIfNotExists(bgReading, "VIRTUAL_PATIENT");
         
-        log.debug("Manually generated BG: $bgReading.value");
+        log.debug("Automaticallly generated BG: $bgReading.value");
     }
 
     public void setSource(String source) {
