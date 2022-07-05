@@ -1,0 +1,13 @@
+*Note by ls2n edition file*
+
+This "plugin/source" directory contains all the sources for blood glucose (BG) reading. We have added :
+
+-ConstantPlugin, gives a constant step value of BG
+-ManualPlugin, same but allows to change manually the value of the constant at any time
+-RandomBG2 , a sinus variation between 2 given values (originally 70 and 190)
+-RandomBG3, a certain variation of the BG values
+-Small Oscillation, sinus around the target value
+
+
+***Not complete***
+-SourceVirtualPatientPlugin.java : the objective is to simulate the behaviour of a patient using an initial conditions and then let the equations calculates the BG
