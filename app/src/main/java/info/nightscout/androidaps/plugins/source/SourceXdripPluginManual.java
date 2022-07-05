@@ -18,7 +18,7 @@ import info.nightscout.androidaps.interfaces.PluginType;
 import info.nightscout.androidaps.logging.BundleLogger;
 
 /**
- * Created by mike on 05.08.2016.
+ * Created by ls2n on 2022.
  */
 public class SourceXdripPluginManual extends PluginBase implements BgSourceInterface {
     private static Logger log = LoggerFactory.getLogger(L.BGSOURCE);
