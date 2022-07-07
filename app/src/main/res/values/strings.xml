@@ -536,6 +536,24 @@
     <string name="virtualpatient_glyc0_summary" translatable="false">Default value : 100. Initial value of gycemia</string>
     <string name="key_virtualpatient_glyc0" translatable="false">virtualpatient_glyc0</string>
     <string name="virtualpatient_glyc0" translatable="false">Initial glycemia</string>
+    <string name="virtualpatient_L1_summary" translatable="false">Default value: -0.0001. Value of the first gain of the observator.</string>
+    <string name="key_virtualpatient_L1" translatable="false">virtualpatient_L1</string>
+    <string name="virtualpatient_L1" translatable="false">L1</string>
+    <string name="virtualpatient_L2_summary" translatable="false">Default value: -0.0001. Value of the second gain of the observator.</string>
+    <string name="key_virtualpatient_L2" translatable="false">virtualpatient_L2</string>
+    <string name="virtualpatient_L2" translatable="false">L2</string>
+    <string name="virtualpatient_Ub_summary" translatable="false">Default value: 0.017. Ub, débit basal en U/min.</string>
+    <string name="key_virtualpatient_Ub" translatable="false">virtualpatient_Ub</string>
+    <string name="virtualpatient_Ub" translatable="false">Ub</string>
+    <string name="virtualpatient_CF_summary" translatable="false">Default value: 50. CF, compensatoire en mg/dL/U.</string>
+    <string name="key_virtualpatient_CF" translatable="false">virtualpatient_CF</string>
+    <string name="virtualpatient_CF" translatable="false">CF</string>
+    <string name="virtualpatient_CIR_summary" translatable="false">Default value: 500. CIR, Carbo-to-Insulino-Ratio en g/U.</string>
+    <string name="key_virtualpatient_CIR" translatable="false">virtualpatient_CIR</string>
+    <string name="virtualpatient_CIR" translatable="false">CIR</string>
+    <string name="virtualpatient_DIA_summary" translatable="false">Default value: 60. DIA, durée de l\'insuline active en min.</string>
+    <string name="key_virtualpatient_DIA" translatable="false">virtualpatient_DIA</string>
+    <string name="virtualpatient_DIA" translatable="false">DIA</string>
     
     
     
