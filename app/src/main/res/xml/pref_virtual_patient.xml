@@ -16,12 +16,90 @@
             android:title="@string/dexcomg5_xdripupload_title" />
       
         
-        <EditTextPreference
-            android:defaultValue="100.0"
-            android:dialogMessage="@string/manual_constant_summary"
-            android:key="@string/key_manual_constant"
-            android:numeric="decimal"
-            android:title="@string/manual_constant" />
+        
+        <!-- Choix de L1 et L2, gains de l'observateur -->
+        <com.andreabaccega.widget.ValidatingEditTextPreference
+            android:defaultValue="-0.0001"
+            android:dialogMessage="@string/openapsama_L1_summary"
+            android:inputType="numberDecimal"
+            android:key="@string/key_openapsama_L1"
+            android:maxLines="20"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="@string/openapsama_L1"
+            validate:floatmaxNumber="100.0"
+            validate:floatminNumber="-100.0"
+            validate:testType="floatNumericRange" />  
+        
+        <com.andreabaccega.widget.ValidatingEditTextPreference
+            android:defaultValue="-0.0001"
+            android:dialogMessage="@string/openapsama_L2_summary"
+            android:inputType="numberDecimal"
+            android:key="@string/key_openapsama_L2"
+            android:maxLines="20"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="@string/openapsama_L2"
+            validate:floatmaxNumber="100.0"
+            validate:floatminNumber="-100.0"
+            validate:testType="floatNumericRange" />  
+        
+        <!-- Choix de Ub, débit basal en unité/minutes -->
+        <com.andreabaccega.widget.ValidatingEditTextPreference
+            android:defaultValue="0.017"
+            android:dialogMessage="@string/openapsama_Ub_summary"
+            android:inputType="numberDecimal"
+            android:key="@string/key_openapsama_Ub"
+            android:maxLines="20"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="@string/openapsama_Ub"
+            validate:floatmaxNumber="100.0"
+            validate:floatminNumber="-100.0"
+            validate:testType="floatNumericRange" />  
+        
+        <!-- Choix de CF compensatoire -->
+        <com.andreabaccega.widget.ValidatingEditTextPreference
+            android:defaultValue="50"
+            android:dialogMessage="@string/openapsama_CF_summary"
+            android:inputType="numberDecimal"
+            android:key="@string/key_openapsama_CF"
+            android:maxLines="20"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="@string/openapsama_CF"
+            validate:floatmaxNumber="500.0"
+            validate:floatminNumber="0.0"
+            validate:testType="floatNumericRange" />  
+        
+        <!-- Choix de CIR, Carbo to Insulino Ratio -->
+        <com.andreabaccega.widget.ValidatingEditTextPreference
+            android:defaultValue="500"
+            android:dialogMessage="@string/openapsama_CIR_summary"
+            android:inputType="numberDecimal"
+            android:key="@string/key_openapsama_CIR"
+            android:maxLines="20"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="@string/openapsama_CIR"
+            validate:floatmaxNumber="1000.0"
+            validate:floatminNumber="0.0"
+            validate:testType="floatNumericRange" />  
+        
+        <!-- Choix de DIA, Durée d'action de l'insuline -->
+        <com.andreabaccega.widget.ValidatingEditTextPreference
+            android:defaultValue="60"
+            android:dialogMessage="@string/openapsama_DIA_summary"
+            android:inputType="numberDecimal"
+            android:key="@string/key_openapsama_DIA"
+            android:maxLines="20"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="@string/openapsama_DIA"
+            validate:floatmaxNumber="1000.0"
+            validate:floatminNumber="0.0"
+            validate:testType="floatNumericRange" />
+        
 
     </PreferenceCategory>
 
