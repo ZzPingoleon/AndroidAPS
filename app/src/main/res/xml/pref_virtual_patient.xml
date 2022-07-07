@@ -14,32 +14,46 @@
             android:key="@string/key_dexcomg5_xdripupload"
             android:summary="@string/dexcomg5_xdripupload_summary"
             android:title="@string/dexcomg5_xdripupload_title" />
+        
+        <!-- Choix de la glycémie initiale -->
+        <com.andreabaccega.widget.ValidatingEditTextPreference
+            android:defaultValue="100"
+            android:dialogMessage="@string/virtualpatient_glyc0_summary"
+            android:inputType="numberDecimal"
+            android:key="@string/key_virtualpatient_glyc0"
+            android:maxLines="20"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="@string/virtualpatient_glyc0"
+            validate:floatmaxNumber="300.0"
+            validate:floatminNumber="0.0"
+            validate:testType="floatNumericRange" /> 
       
         
         
         <!-- Choix de L1 et L2, gains de l'observateur -->
         <com.andreabaccega.widget.ValidatingEditTextPreference
             android:defaultValue="-0.0001"
-            android:dialogMessage="@string/openapsama_L1_summary"
+            android:dialogMessage="@string/virtualpatient_L1_summary"
             android:inputType="numberDecimal"
-            android:key="@string/key_openapsama_L1"
+            android:key="@string/key_virtualpatient_L1"
             android:maxLines="20"
             android:selectAllOnFocus="true"
             android:singleLine="true"
-            android:title="@string/openapsama_L1"
+            android:title="@string/virtualpatient_L1"
             validate:floatmaxNumber="100.0"
             validate:floatminNumber="-100.0"
             validate:testType="floatNumericRange" />  
         
         <com.andreabaccega.widget.ValidatingEditTextPreference
             android:defaultValue="-0.0001"
-            android:dialogMessage="@string/openapsama_L2_summary"
+            android:dialogMessage="@string/virtualpatient_L2_summary"
             android:inputType="numberDecimal"
-            android:key="@string/key_openapsama_L2"
+            android:key="@string/key_virtualpatient_L2"
             android:maxLines="20"
             android:selectAllOnFocus="true"
             android:singleLine="true"
-            android:title="@string/openapsama_L2"
+            android:title="@string/virtualpatient_L2"
             validate:floatmaxNumber="100.0"
             validate:floatminNumber="-100.0"
             validate:testType="floatNumericRange" />  
@@ -47,13 +61,13 @@
         <!-- Choix de Ub, débit basal en unité/minutes -->
         <com.andreabaccega.widget.ValidatingEditTextPreference
             android:defaultValue="0.017"
-            android:dialogMessage="@string/openapsama_Ub_summary"
+            android:dialogMessage="@string/virtualpatient_Ub_summary"
             android:inputType="numberDecimal"
-            android:key="@string/key_openapsama_Ub"
+            android:key="@string/key_virtualpatient_Ub"
             android:maxLines="20"
             android:selectAllOnFocus="true"
             android:singleLine="true"
-            android:title="@string/openapsama_Ub"
+            android:title="@string/virtualpatient_Ub"
             validate:floatmaxNumber="100.0"
             validate:floatminNumber="-100.0"
             validate:testType="floatNumericRange" />  
@@ -61,13 +75,13 @@
         <!-- Choix de CF compensatoire -->
         <com.andreabaccega.widget.ValidatingEditTextPreference
             android:defaultValue="50"
-            android:dialogMessage="@string/openapsama_CF_summary"
+            android:dialogMessage="@string/virtualpatient_CF_summary"
             android:inputType="numberDecimal"
-            android:key="@string/key_openapsama_CF"
+            android:key="@string/key_virtualpatient_CF"
             android:maxLines="20"
             android:selectAllOnFocus="true"
             android:singleLine="true"
-            android:title="@string/openapsama_CF"
+            android:title="@string/virtualpatient_CF"
             validate:floatmaxNumber="500.0"
             validate:floatminNumber="0.0"
             validate:testType="floatNumericRange" />  
@@ -75,13 +89,13 @@
         <!-- Choix de CIR, Carbo to Insulino Ratio -->
         <com.andreabaccega.widget.ValidatingEditTextPreference
             android:defaultValue="500"
-            android:dialogMessage="@string/openapsama_CIR_summary"
+            android:dialogMessage="@string/virtualpatient_CIR_summary"
             android:inputType="numberDecimal"
-            android:key="@string/key_openapsama_CIR"
+            android:key="@string/key_virtualpatient_CIR"
             android:maxLines="20"
             android:selectAllOnFocus="true"
             android:singleLine="true"
-            android:title="@string/openapsama_CIR"
+            android:title="@string/virtualpatient_CIR"
             validate:floatmaxNumber="1000.0"
             validate:floatminNumber="0.0"
             validate:testType="floatNumericRange" />  
@@ -89,13 +103,13 @@
         <!-- Choix de DIA, Durée d'action de l'insuline -->
         <com.andreabaccega.widget.ValidatingEditTextPreference
             android:defaultValue="60"
-            android:dialogMessage="@string/openapsama_DIA_summary"
+            android:dialogMessage="@string/virtualpatient_DIA_summary"
             android:inputType="numberDecimal"
-            android:key="@string/key_openapsama_DIA"
+            android:key="@string/key_virtualpatient_DIA"
             android:maxLines="20"
             android:selectAllOnFocus="true"
             android:singleLine="true"
-            android:title="@string/openapsama_DIA"
+            android:title="@string/virtualpatient_DIA"
             validate:floatmaxNumber="1000.0"
             validate:floatminNumber="0.0"
             validate:testType="floatNumericRange" />
