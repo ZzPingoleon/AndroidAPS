@@ -532,6 +532,14 @@
     <string name="openapsama_minuterepas" translatable="false">MealMinute</string>
     <string name="openapsama_minuterepas_summary">Default value: 0. Minute of the meal (between 0 and 59)</string>
     
+    
+    <string name="virtualpatient_glyc0_summary" translatable="false">Default value : 100. Initial value of gycemia</string>
+    <string name="key_virtualpatient_glyc0" translatable="false">virtualpatient_glyc0</string>
+    <string name="virtualpatient_glyc0" translatable="false">Initial glycemia</string>
+    
+    
+    
+    
     <string name="manual_constant" translatable="false">Valeur de BG constante</string>
     <string name="manual_constant_summary">Default value: 100. manual_constant.</string>
     <string name="openapsama_link_to_preferncejson_doc_txt">Attention!\nNormally you do not have to change these values below. Please CLICK HERE and READ the text and make sure you UNDERSTAND it before change any of these values.</string>
