@@ -11,3 +11,5 @@ This "plugin/source" directory contains all the sources for blood glucose (BG) r
 
 ***Not complete***
 -SourceVirtualPatientPlugin.java : the objective is to simulate the behaviour of a patient using an initial conditions and then let the equations calculates the BG
+-Not taking into account any meal for the moment
+-Major difficulty : how to get the insulin value from the output command (needed to calculates the virtual patient's BG)
