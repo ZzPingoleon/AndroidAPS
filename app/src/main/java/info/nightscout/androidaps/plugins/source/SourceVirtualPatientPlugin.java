@@ -38,6 +38,7 @@ public class SourceVirtualPatientPlugin extends PluginBase implements BgSourceIn
                 .mainType(PluginType.BGSOURCE)
                 .fragmentClass(BGSourceFragment.class.getName())
                 .pluginName(R.string.virtual_patient)
+                .preferencesId(R.xml.pref_virtual_patient)
                 .description(R.string.description_source_virtual_patient)
         );
     }
