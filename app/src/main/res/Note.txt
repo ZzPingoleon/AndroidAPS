@@ -3,8 +3,10 @@
 This "res" diretory contains all code file necessary for the Android application interface.
 
 In the "values" directory are all variables that will be called back in the whole application. It is used to describe names, or global variables.
+The most important file is the file "string.xml" with :
+Changes for the Dynamic Bolus Calculator and Virtual Patient can be mainly found on line ~520.
 
-In the "xml" directory are the interfaces monitoring of all application menus.
+In the "xml" directory are the interfaces monitoring of all application menus. 
 
 Some values and option interfaces were added and changed for the Dynamic Bolus Calculator
 +The variables can all be traduced in other languages than English.
