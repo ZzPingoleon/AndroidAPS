@@ -200,11 +200,15 @@ var determine_basal = function determine_basal(glucose_status, currenttemp, iob_
         , 'eventualBG': eventualBG
         , 'snoozeBG': snoozeBG
     };
-
+  
+  
     var basaliob;
     if (iob_data.basaliob) { basaliob = iob_data.basaliob; }
     else { basaliob = iob_data.iob - iob_data.bolussnooze; }
-   
+  
+  
+    var dirac=0;
+    var heaviside=0;
   
     var currentDate=new Date();
     var currentHour=currentDate.getHours();
