@@ -96,7 +96,7 @@ public class DetermineBasalAdapterAMAJS {
             ScriptableObject.defineClass(scope, LoggerCallback.class);
             Scriptable myLogger = rhino.newObject(scope, "LoggerCallback", null);
             scope.put("console2", scope, myLogger);
-            rhino.evaluateString(scope, readFile("DynamicBolusCalculator/loggerhelper.js"), "JavaScript", 0, null);
+            rhino.evaluateString(scope, readFile("Fit4FIT/loggerhelper.js"), "JavaScript", 0, null);
 
             //set module parent
             rhino.evaluateString(scope, "var module = {\"parent\":Boolean(1)};", "JavaScript", 0, null);
@@ -104,8 +104,8 @@ public class DetermineBasalAdapterAMAJS {
             rhino.evaluateString(scope, "require = function() {return round_basal;};", "JavaScript", 0, null);
 
             //generate functions "determine_basal" and "setTempBasal"
-            rhino.evaluateString(scope, readFile("DynamicBolusCalculator/determine-basal.js"), "JavaScript", 0, null);
-            rhino.evaluateString(scope, readFile("DynamicBolusCalculator/basal-set-temp.js"), "setTempBasal.js", 0, null);
+            rhino.evaluateString(scope, readFile("Fit4FIT/determine-basal.js"), "JavaScript", 0, null);
+            rhino.evaluateString(scope, readFile("Fit4FIT/basal-set-temp.js"), "setTempBasal.js", 0, null);
             Object determineBasalObj = scope.get("determine_basal", scope);
             Object setTempBasalFunctionsObj = scope.get("tempBasalFunctions", scope);
 
