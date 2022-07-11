@@ -151,7 +151,7 @@
             android:defaultValue="false"
             android:key="@string/key_f4f_traitementrepas"
             android:title="@string/f4f_traitementrepas"
-            android:summary="@string/openapsama_f4f_summary"/>
+            android:summary="@string/f4f_traitementrepas_summary"/>
         
         <!-- Choix d'un repas en grammes de glucides -->
         <com.andreabaccega.widget.ValidatingEditTextPreference
