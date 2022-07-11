@@ -1,4 +1,4 @@
-package info.nightscout.androidaps.plugins.aps.DynamicBolusCalculator
+package info.nightscout.androidaps.plugins.aps.Fit4FIT
 
 import android.os.Bundle
 import android.text.TextUtils
@@ -36,7 +36,7 @@ class DBCFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         openapsma_run.setOnClickListener {
-            DBCPlugin.getPlugin().invoke("OpenAPSAMA button", false)
+            F4FPlugin.getPlugin().invoke("OpenAPSAMA button", false)
         }
     }
 
@@ -73,11 +73,11 @@ class DBCFragment : Fragment() {
     @Synchronized
     private fun updateGUI() {
         if (openapsma_result == null) return
-        DBCPlugin.getPlugin().lastAPSResult?.let { lastAPSResult ->
+        F4FPlugin.getPlugin().lastAPSResult?.let { lastAPSResult ->
             openapsma_result.text = JSONFormatter.format(lastAPSResult.json)
             openapsma_request.text = lastAPSResult.toSpanned()
         }
-        DBCPlugin.getPlugin().lastDetermineBasalAdapterAMAJS?.let { determineBasalAdapterAMAJS ->
+        F4FPlugin.getPlugin().lastDetermineBasalAdapterAMAJS?.let { determineBasalAdapterAMAJS ->
             openapsma_glucosestatus.text = JSONFormatter.format(determineBasalAdapterAMAJS.glucoseStatusParam)
             openapsma_currenttemp.text = JSONFormatter.format(determineBasalAdapterAMAJS.currentTempParam)
             try {
@@ -92,10 +92,10 @@ class DBCFragment : Fragment() {
             openapsma_mealdata.text = JSONFormatter.format(determineBasalAdapterAMAJS.mealDataParam)
             openapsma_scriptdebugdata.text = determineBasalAdapterAMAJS.scriptDebug
         }
-        if (DBCPlugin.getPlugin().lastAPSRun != 0L) {
-            openapsma_lastrun.text = DateUtil.dateAndTimeFullString(DBCPlugin.getPlugin().lastAPSRun)
+        if (F4FPlugin.getPlugin().lastAPSRun != 0L) {
+            openapsma_lastrun.text = DateUtil.dateAndTimeFullString(F4FPlugin.getPlugin().lastAPSRun)
         }
-        DBCPlugin.getPlugin().lastAutosensResult?.let {
+        F4FPlugin.getPlugin().lastAutosensResult?.let {
             openapsma_autosensdata.text = JSONFormatter.format(it.json())
         }
     }
