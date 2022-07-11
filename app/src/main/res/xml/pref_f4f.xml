@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:validate="http://schemas.android.com/apk/res-auto">
+    <PreferenceCategory
+        android:key="openapsama"
+        android:title="@string/openapsama">
+
+        <EditTextPreference
+            android:defaultValue="1"
+            android:dialogMessage="@string/openapsma_maxbasal_summary"
+            android:key="@string/key_openapsma_max_basal"
+            android:numeric="decimal"
+            android:title="@string/openapsma_maxbasal_title" />
+
+        <EditTextPreference
+            android:defaultValue="1.5"
+            android:dialogMessage="@string/openapsma_maxiob_summary"
+            android:key="@string/key_openapsma_max_iob"
+            android:numeric="decimal"
+            android:title="@string/openapsma_maxiob_title" />
+
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="@string/key_openapsama_useautosens"
+            android:title="@string/openapsama_useautosens" />
+
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="@string/key_openapsama_autosens_adjusttargets"
+            android:summary="@string/openapsama_autosens_adjusttargets_summary"
+            android:title="@string/openapsama_autosens_adjusttargets" />
+
+        <com.andreabaccega.widget.ValidatingEditTextPreference
+            android:defaultValue="3.0"
+            android:dialogMessage="@string/openapsama_min_5m_carbimpact_summary"
+            android:inputType="numberDecimal"
+            android:key="@string/key_openapsama_min_5m_carbimpact"
+            android:maxLines="20"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="@string/openapsama_min_5m_carbimpact"
+            validate:floatmaxNumber="12.0"
+            validate:floatminNumber="0.1"
+            validate:testType="floatNumericRange" />
+        
+        
+        <!-- Choix de L1 et L2, gains de l'observateur -->
+        <com.andreabaccega.widget.ValidatingEditTextPreference
+            android:defaultValue="-0.0001"
+            android:dialogMessage="@string/openapsama_L1_summary"
+            android:inputType="numberDecimal"
+            android:key="@string/key_openapsama_L1"
+            android:maxLines="20"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="@string/openapsama_L1"
+            validate:floatmaxNumber="100.0"
+            validate:floatminNumber="-100.0"
+            validate:testType="floatNumericRange" />  
+        
+        <com.andreabaccega.widget.ValidatingEditTextPreference
+            android:defaultValue="-0.0001"
+            android:dialogMessage="@string/openapsama_L2_summary"
+            android:inputType="numberDecimal"
+            android:key="@string/key_openapsama_L2"
+            android:maxLines="20"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="@string/openapsama_L2"
+            validate:floatmaxNumber="100.0"
+            validate:floatminNumber="-100.0"
+            validate:testType="floatNumericRange" />  
+        
+        <!-- Choix de Ub, débit basal en unité/minutes -->
+        <com.andreabaccega.widget.ValidatingEditTextPreference
+            android:defaultValue="0.017"
+            android:dialogMessage="@string/openapsama_Ub_summary"
+            android:inputType="numberDecimal"
+            android:key="@string/key_openapsama_Ub"
+            android:maxLines="20"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="@string/openapsama_Ub"
+            validate:floatmaxNumber="100.0"
+            validate:floatminNumber="-100.0"
+            validate:testType="floatNumericRange" />  
+        
+        <!-- Choix de CF compensatoire -->
+        <com.andreabaccega.widget.ValidatingEditTextPreference
+            android:defaultValue="50"
+            android:dialogMessage="@string/openapsama_CF_summary"
+            android:inputType="numberDecimal"
+            android:key="@string/key_openapsama_CF"
+            android:maxLines="20"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="@string/openapsama_CF"
+            validate:floatmaxNumber="500.0"
+            validate:floatminNumber="0.0"
+            validate:testType="floatNumericRange" />  
+        
+        <!-- Choix de CIR, Carbo to Insulino Ratio -->
+        <com.andreabaccega.widget.ValidatingEditTextPreference
+            android:defaultValue="500"
+            android:dialogMessage="@string/openapsama_CIR_summary"
+            android:inputType="numberDecimal"
+            android:key="@string/key_openapsama_CIR"
+            android:maxLines="20"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="@string/openapsama_CIR"
+            validate:floatmaxNumber="1000.0"
+            validate:floatminNumber="0.0"
+            validate:testType="floatNumericRange" />  
+        
+        <!-- Choix de DIA, Durée d'action de l'insuline -->
+        <com.andreabaccega.widget.ValidatingEditTextPreference
+            android:defaultValue="60"
+            android:dialogMessage="@string/openapsama_DIA_summary"
+            android:inputType="numberDecimal"
+            android:key="@string/key_openapsama_DIA"
+            android:maxLines="20"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="@string/openapsama_DIA"
+            validate:floatmaxNumber="1000.0"
+            validate:floatminNumber="0.0"
+            validate:testType="floatNumericRange" />
+        
+        <com.andreabaccega.widget.ValidatingEditTextPreference
+            android:defaultValue="5.0"
+            android:dialogMessage="@string/openapsama_max_basal_summary"
+            android:inputType="numberDecimal"
+            android:key="@string/key_openapsama_max_basal"
+            android:maxLines="20"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="@string/openapsama_max_basal"
+            validate:floatmaxNumber="1000.0"
+            validate:floatminNumber="0.0"
+            validate:testType="floatNumericRange" />  
+        
+        <!-- Ajout d'un switch pour accepter le choix d'un calibrage des gains de l'observateur automatiquement -->
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="@string/key_f4f_calibrationobs"
+            android:title="@string/f4f_calibrationobs" />
+        
+        <!-- Ajout d'un switch pour indiquer un repas -->
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="@string/key_f4f_traitementrepas"
+            android:title="@string/f4f_traitementrepas"
+            android:summary="@string/openapsama_f4f_summary"/>
+        
+        <!-- Choix d'un repas en grammes de glucides -->
+        <com.andreabaccega.widget.ValidatingEditTextPreference
+            android:defaultValue="0.0"
+            android:dialogMessage="@string/f4f_repas_summary"
+            android:inputType="numberDecimal"
+            android:key="@string/key_f4f_repas"
+            android:maxLines="20"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="@string/f4f_repas"
+            validate:floatmaxNumber="1000000.0"
+            validate:floatminNumber="0.0"
+            validate:testType="floatNumericRange" /> 
+        
+        <!-- Choix de l'heure du repas -->
+        <com.andreabaccega.widget.ValidatingEditTextPreference
+            android:defaultValue="0"
+            android:dialogMessage="@string/f4f_heurerepas_summary"
+            android:inputType="number"
+            android:key="@string/key_f4f_heurerepas"
+            android:maxLines="20"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="@string/f4f_heurerepas"
+            validate:maxNumber="23"
+            validate:minNumber="0"
+            validate:testType="numericRange" />
+                                                               
+                                                               
+        <!-- Choix de la minute du repas -->
+        <com.andreabaccega.widget.ValidatingEditTextPreference
+            android:defaultValue="0"
+            android:dialogMessage="@string/openapsama_f4f_summary"
+            android:inputType="number"
+            android:key="@string/key_f4f_minuterepas"
+            android:maxLines="20"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="@string/f4f_minuterepas"
+            validate:maxNumber="59"
+            validate:minNumber="0"
+            validate:testType="numericRange" />
+        
+        
+
+        <PreferenceScreen android:title="@string/advancedsettings_title">
+
+            <Preference android:summary="@string/openapsama_link_to_preferncejson_doc_txt">
+                <intent
+                    android:action="android.intent.action.VIEW"
+                    android:data="@string/openapsama_link_to_preferncejson_doc" />
+            </Preference>
+
+            <SwitchPreference
+                android:defaultValue="false"
+                android:key="@string/key_always_use_shortavg"
+                android:summary="@string/always_use_shortavg_summary"
+                android:title="@string/always_use_shortavg" />
+
+            <com.andreabaccega.widget.ValidatingEditTextPreference
+                android:defaultValue="3"
+                android:dialogMessage="@string/openapsama_max_daily_safety_multiplier_summary"
+                android:digits="0123456789.,"
+                android:inputType="number"
+                android:key="@string/key_openapsama_max_daily_safety_multiplier"
+                android:maxLines="20"
+                android:selectAllOnFocus="true"
+                android:title="@string/openapsama_max_daily_safety_multiplier"
+                validate:maxNumber="10"
+                validate:minNumber="1"
+                validate:testType="numericRange" />
+
+            <com.andreabaccega.widget.ValidatingEditTextPreference
+                android:defaultValue="4"
+                android:dialogMessage="@string/openapsama_current_basal_safety_multiplier_summary"
+                android:digits="0123456789.,"
+                android:inputType="number"
+                android:key="@string/key_openapsama_current_basal_safety_multiplier"
+                android:maxLines="20"
+                android:selectAllOnFocus="true"
+                android:singleLine="true"
+                android:title="@string/openapsama_current_basal_safety_multiplier"
+                validate:floatmaxNumber="10"
+                validate:floatminNumber="1"
+                validate:testType="floatNumericRange" />
+
+            <com.andreabaccega.widget.ValidatingEditTextPreference
+                android:defaultValue="2"
+                android:dialogMessage="@string/openapsama_bolussnooze_dia_divisor_summary"
+                android:digits="0123456789.,"
+                android:inputType="numberDecimal"
+                android:key="@string/key_openapsama_bolussnooze_dia_divisor"
+                android:maxLines="20"
+                android:selectAllOnFocus="true"
+                android:singleLine="true"
+                android:title="@string/openapsama_bolussnooze_dia_divisor"
+                validate:maxNumber="10"
+                validate:minNumber="1"
+                validate:testType="floatNumericRange" />
+
+        </PreferenceScreen>
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
