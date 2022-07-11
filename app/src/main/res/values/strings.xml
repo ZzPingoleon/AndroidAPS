@@ -596,6 +596,20 @@
     <string name="f4f_tauc" translatable="false">Tau_c</string>
     <string name="key_f4f_tauc" translatable="false">f4f_tauc</string>
     <string name="f4f_tauc_summary">Default value: 60. Tau_c, durée d'action des glucides en min.</string>
+    <string name="f4f_ti" translatable="false">T_i</string>
+    <string name="key_f4f_ti" translatable="false">f4f_ti</string>
+    <string name="f4f_ti_summary">Default value: 60. T_i, constante de temps pour l'absorption d'insuline en min.</string>
+    <string name="f4f_tc" translatable="false">T_c</string>
+    <string name="key_f4f_tc" translatable="false">f4f_tc</string>
+    <string name="f4f_tc_summary">Default value: 60. T_c, constante de temps pour l'absorption des glucides en min.</string>
+    <string name="f4f_tau_margin" translatable="false">Tau_margin</string>
+    <string name="key_f4f_tau_margin" translatable="false">f4f_tau_margin</string>
+    <string name="f4f_tau_margin_summary">Default value: 30. Tau_margin, marge de temps en min.</string>
+    <string name="f4f_t_margin" translatable="false">T_margin</string>
+    <string name="key_f4f_t_margin" translatable="false">f4f_t_margin</string>
+    <string name="f4f_t_margin_summary">Default value: 30. T_margin, marge de temps en min.</string>
+    
+    
     
     
     
