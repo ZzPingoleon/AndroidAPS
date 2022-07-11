@@ -218,7 +218,7 @@ public class DetermineBasalAdapterAMAJS {
         mProfile.put("temptargetSet", tempTargetSet);
         mProfile.put("autosens_adjust_targets", SP.getBoolean(R.string.key_openapsama_autosens_adjusttargets, true));
         
-        mProfile.put("meal_treatment", SP.getBoolean(R.string.key_openapsama_traitementrepas, false));
+        mProfile.put("meal_treatment", SP.getBoolean(R.string.key_f4f_traitementrepas, false));
         
         
         //align with max-absorption model in AMA sensitivity
@@ -238,17 +238,17 @@ public class DetermineBasalAdapterAMAJS {
         Double max_basal=5.0;
         
         
-        mProfile.put("Ub", SP.getDouble(R.string.key_openapsama_Ub, Ub_default));
+        mProfile.put("Ub", SP.getDouble(R.string.key_f4f_Ub, Ub_default));
                 
-        mProfile.put("CF", SP.getDouble(R.string.key_openapsama_CF, CF_default));
+        mProfile.put("CF", SP.getDouble(R.string.key_f4f_CF, CF_default));
                 
-        mProfile.put("CIR", SP.getDouble(R.string.key_openapsama_CIR, CIR_default));
+        mProfile.put("CIR", SP.getDouble(R.string.key_f4f_CIR, CIR_default));
                 
-        mProfile.put("DIA_aps", SP.getDouble(R.string.key_openapsama_DIA, DIA_default));
+        mProfile.put("DIA_aps", SP.getDouble(R.string.key_f4f_DIA, DIA_default));
                 
-        mProfile.put("max_basal", SP.getDouble(R.string.key_openapsama_max_basal, max_basal));
+        mProfile.put("max_basal", SP.getDouble(R.string.key_f4f_max_basal, max_basal));
         
-        //mProfile.put("current_basal", SP.getDouble(R.string.key_openapsama_Ub, Ub_default));
+        //mProfile.put("current_basal", SP.getDouble(R.string.key_f4f_Ub, Ub_default));
         
         if ((mProfile.getDouble("Ub")==0.017)&&(mProfile.getDouble("CF")==50)&&(mProfile.getDouble("CIR")==500)){
             L1_default=-0.0072;
@@ -256,9 +256,9 @@ public class DetermineBasalAdapterAMAJS {
         }
         
         
-        mProfile.put("L1", SP.getDouble(R.string.key_openapsama_L1, L1_default));
+        mProfile.put("L1", SP.getDouble(R.string.key_f4f_L1, L1_default));
                 
-        mProfile.put("L2", SP.getDouble(R.string.key_openapsama_L2, L2_default));
+        mProfile.put("L2", SP.getDouble(R.string.key_f4f_L2, L2_default));
         
         
         
@@ -266,9 +266,9 @@ public class DetermineBasalAdapterAMAJS {
         int heurerepas_default=0;
         int minuterepas_default=0;
         
-        mProfile.put("repas", SP.getDouble(R.string.key_openapsama_repas, repas_default));
-        mProfile.put("heure_repas", SP.getInt(R.string.key_openapsama_heurerepas, heurerepas_default));
-        mProfile.put("minute_repas", SP.getInt(R.string.key_openapsama_minuterepas, minuterepas_default));
+        mProfile.put("repas", SP.getDouble(R.string.key_f4f_repas, repas_default));
+        mProfile.put("heure_repas", SP.getInt(R.string.key_f4f_heurerepas, heurerepas_default));
+        mProfile.put("minute_repas", SP.getInt(R.string.key_f4f_minuterepas, minuterepas_default));
         
 
         if (ProfileFunctions.getSystemUnits().equals(Constants.MMOL)) {
@@ -378,7 +378,7 @@ public class DetermineBasalAdapterAMAJS {
         mProfile.put("temptargetSet", tempTargetSet);
         mProfile.put("autosens_adjust_targets", SP.getBoolean(R.string.key_openapsama_autosens_adjusttargets, true));
         
-        mProfile.put("meal_treatment", SP.getBoolean(R.string.key_openapsama_traitementrepas, false));
+        mProfile.put("meal_treatment", SP.getBoolean(R.string.key_f4f_traitementrepas, false));
         
         //align with max-absorption model in AMA sensitivity
         if (mealData.usedMinCarbsImpact > 0) {
@@ -396,17 +396,17 @@ public class DetermineBasalAdapterAMAJS {
         Double max_basal=5.0;
         
         
-        mProfile.put("Ub", SP.getDouble(R.string.key_openapsama_Ub, Ub_default));
+        mProfile.put("Ub", SP.getDouble(R.string.key_f4f_Ub, Ub_default));
                 
-        mProfile.put("CF", SP.getDouble(R.string.key_openapsama_CF, CF_default));
+        mProfile.put("CF", SP.getDouble(R.string.key_f4f_CF, CF_default));
                 
-        mProfile.put("CIR", SP.getDouble(R.string.key_openapsama_CIR, CIR_default));
+        mProfile.put("CIR", SP.getDouble(R.string.key_f4f_CIR, CIR_default));
                 
-        mProfile.put("DIA_aps", SP.getDouble(R.string.key_openapsama_DIA, DIA_default));
+        mProfile.put("DIA_aps", SP.getDouble(R.string.key_f4f_DIA, DIA_default));
                 
-        mProfile.put("max_basal", SP.getDouble(R.string.key_openapsama_max_basal, max_basal));
+        mProfile.put("max_basal", SP.getDouble(R.string.key_f4f_max_basal, max_basal));
         
-        //mProfile.put("current_basal", SP.getDouble(R.string.key_openapsama_Ub, Ub_default));
+        //mProfile.put("current_basal", SP.getDouble(R.string.key_f4f_Ub, Ub_default));
         
         if ((mProfile.getDouble("Ub")==0.017)&&(mProfile.getDouble("CF")==50)&&(mProfile.getDouble("CIR")==500)){
             L1_calib=-0.0072;
@@ -446,9 +446,9 @@ public class DetermineBasalAdapterAMAJS {
         int heurerepas_default=0;
         int minuterepas_default=0;
         
-        mProfile.put("repas", SP.getDouble(R.string.key_openapsama_repas, repas_default));
-        mProfile.put("heure_repas", SP.getInt(R.string.key_openapsama_heurerepas, heurerepas_default));
-        mProfile.put("minute_repas", SP.getInt(R.string.key_openapsama_minuterepas, minuterepas_default));
+        mProfile.put("repas", SP.getDouble(R.string.key_f4f_repas, repas_default));
+        mProfile.put("heure_repas", SP.getInt(R.string.key_f4f_heurerepas, heurerepas_default));
+        mProfile.put("minute_repas", SP.getInt(R.string.key_f4f_minuterepas, minuterepas_default));
         
 
         if (ProfileFunctions.getSystemUnits().equals(Constants.MMOL)) {
