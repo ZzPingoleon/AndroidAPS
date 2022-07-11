@@ -13,9 +13,6 @@
 
 
 //variables gloables:
-var x2=0.0;
-var x3=0.0;
-var u_prec=0.0;
 
 var repas_annonce_flag=false;
 
