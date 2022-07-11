@@ -236,6 +236,11 @@ public class DetermineBasalAdapterAMAJS {
         Double CIR_default=500.0;
         Double DIA_default=60.0;
         Double max_basal=5.0;
+        Double tau_c_default=60.0;
+        Double T_i_default=60;
+        Double T_c_default=60;
+        Double tau_margin_default=30;
+        Double T_margin_default=30;
         
         
         mProfile.put("Ub", SP.getDouble(R.string.key_f4f_Ub, Ub_default));
@@ -248,7 +253,15 @@ public class DetermineBasalAdapterAMAJS {
                 
         mProfile.put("max_basal", SP.getDouble(R.string.key_f4f_max_basal, max_basal));
         
-        //mProfile.put("current_basal", SP.getDouble(R.string.key_f4f_Ub, Ub_default));
+        mProfile.put("tau_c", SP.getDouble(R.string.key_f4f_tauc, tau_c_default));
+        
+        mProfile.put("T_i", SP.getDouble(R.string.key_f4f_ti, T_i_default));
+        
+        mProfile.put("T_c", SP.getDouble(R.string.key_f4f_tc, T_c_default));
+        
+        mProfile.put("T_margin", SP.getDouble(R.string.key_f4f_t_margin, T_margin_default));
+        
+        mProfile.put("tau_margin", SP.getDouble(R.string.key_f4f_tau_margin, tau_margin_default));
         
         if ((mProfile.getDouble("Ub")==0.017)&&(mProfile.getDouble("CF")==50)&&(mProfile.getDouble("CIR")==500)){
             L1_default=-0.0072;
