@@ -555,6 +555,14 @@
     <string name="key_virtualpatient_DIA" translatable="false">virtualpatient_DIA</string>
     <string name="virtualpatient_DIA" translatable="false">DIA</string>
     
+    <string name="fit4fit" translatable="false">Fit4FIT</string>
+    <string name="f4f_shortname" translatable="false">F4F</string>
+    <string name="description_f4f" translatable="false"></string>
+    
+    
+    
+    
+    
     
     
     
