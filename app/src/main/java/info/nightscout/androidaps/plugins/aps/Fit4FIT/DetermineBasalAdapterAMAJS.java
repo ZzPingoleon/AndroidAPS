@@ -2,7 +2,7 @@
 //La fonction "setData" permet de définir les paramètres contenus dans le profile et donc d'ajouter des élèments en variables globales comme les gains de l'observateur.
 
 
-package info.nightscout.androidaps.plugins.aps.DynamicBolusCalculator;
+package info.nightscout.androidaps.plugins.aps.Fit4FIT;
 
 import org.json.JSONArray;
 import org.json.JSONException;
