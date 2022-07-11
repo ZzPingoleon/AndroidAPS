@@ -207,7 +207,7 @@ public class F4FPlugin extends PluginBase implements APSInterface {
         }
         
         
-        if (SP.getBoolean(R.string.key_openapsama_useautosens, false)){
+        if (SP.getBoolean(R.string.key_f4f_calibrationobs, false)){
                        
             try {
                 determineBasalAdapterAMAJS.setData_calibration(profile, maxIob, maxBasal, minBg, maxBg, targetBg, ConfigBuilderPlugin.getPlugin().getActivePump().getBaseBasalRate(), iobArray, glucoseStatus, mealData,
