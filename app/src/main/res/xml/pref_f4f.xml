@@ -140,6 +140,21 @@
             validate:floatminNumber="0.0"
             validate:testType="floatNumericRange" />  
         
+        <!-- Paramétrage de tau_c, Durée d'action des glucides -->
+        <com.andreabaccega.widget.ValidatingEditTextPreference
+            android:defaultValue="60"
+            android:dialogMessage="@string/f4f_tauc_summary"
+            android:inputType="numberDecimal"
+            android:key="@string/key_f4f_tauc"
+            android:maxLines="20"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="@string/f4f_tauc"
+            validate:floatmaxNumber="1000.0"
+            validate:floatminNumber="0.0"
+            validate:testType="floatNumericRange" />
+        
+        
         <!-- Ajout d'un switch pour accepter le choix d'un calibrage des gains de l'observateur automatiquement -->
         <SwitchPreference
             android:defaultValue="false"
