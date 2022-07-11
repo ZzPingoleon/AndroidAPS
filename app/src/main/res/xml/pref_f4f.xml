@@ -154,6 +154,62 @@
             validate:floatminNumber="0.0"
             validate:testType="floatNumericRange" />
         
+        <!-- Paramétrage de T_i, constante de temps pour l'insuline -->
+        <com.andreabaccega.widget.ValidatingEditTextPreference
+            android:defaultValue="60"
+            android:dialogMessage="@string/f4f_ti_summary"
+            android:inputType="numberDecimal"
+            android:key="@string/key_f4f_ti"
+            android:maxLines="20"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="@string/f4f_ti"
+            validate:floatmaxNumber="1000.0"
+            validate:floatminNumber="0.0"
+            validate:testType="floatNumericRange" />
+        
+        <!-- Paramétrage de T_c, constante de temps pour les glucides -->
+        <com.andreabaccega.widget.ValidatingEditTextPreference
+            android:defaultValue="60"
+            android:dialogMessage="@string/f4f_tc_summary"
+            android:inputType="numberDecimal"
+            android:key="@string/key_f4f_tc"
+            android:maxLines="20"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="@string/f4f_tc"
+            validate:floatmaxNumber="1000.0"
+            validate:floatminNumber="0.0"
+            validate:testType="floatNumericRange" />
+        
+        <!-- Paramétrage de tau_margin, constante de temps de marge -->
+        <com.andreabaccega.widget.ValidatingEditTextPreference
+            android:defaultValue="30"
+            android:dialogMessage="@string/f4f_tau_margin_summary"
+            android:inputType="numberDecimal"
+            android:key="@string/key_f4f_tau_margin"
+            android:maxLines="20"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="@string/f4f_tau_margin"
+            validate:floatmaxNumber="1000.0"
+            validate:floatminNumber="0.0"
+            validate:testType="floatNumericRange" />
+        
+        <!-- Paramétrage de t_margin, temps de marge -->
+        <com.andreabaccega.widget.ValidatingEditTextPreference
+            android:defaultValue="30"
+            android:dialogMessage="@string/f4f_t_margin_summary"
+            android:inputType="numberDecimal"
+            android:key="@string/key_f4f_t_margin"
+            android:maxLines="20"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="@string/f4f_t_margin"
+            validate:floatmaxNumber="1000.0"
+            validate:floatminNumber="0.0"
+            validate:testType="floatNumericRange" />
+        
         
         <!-- Ajout d'un switch pour accepter le choix d'un calibrage des gains de l'observateur automatiquement -->
         <SwitchPreference
