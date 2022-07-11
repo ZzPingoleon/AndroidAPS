@@ -11,7 +11,6 @@
   THE SOFTWARE.
 */
 
-//import "app/src/main/java/info/nightscout/androidaps/MainApp"
 
 //variables gloables:
 var x2=0.0;
@@ -241,7 +240,7 @@ var determine_basal = function determine_basal(glucose_status, currenttemp, iob_
     var te=5;
 
     var debit_basal=k_d/k_i;
-    var insuline_basal=debit_basal;
+    var insuline=debit_basal;
   
   
     var if (profile.meal_treatment && window.repas_annonce_flag==false){
@@ -251,59 +250,28 @@ var determine_basal = function determine_basal(glucose_status, currenttemp, iob_
       window.repas_annonce_flag=true; //à remettre en false après le traitement du repas
     }
   
-    
-    var insuline=(bg-bg_ref)/k_i-tau_i*(window.x2+window.x3);
+    var tau_a=0;
   
-    if (bg<target_bg){
-      insuline=0;
-    }
-  
-  
-    insuline=insuline+insuline_basal;
-  
-    
-  
-    if (profile.meal_treatment){
-      //gérer une prise en compte à l'avance de 30 minutes, remplacer 30 par une variable de temps autre (code à ajuster si temps>59) si nécessaire
-      if (profile.minute_repas>=30){
-        if (currentMinute==profile.minute_repas-30 && currentHour==profile.heure_repas){
-          insuline=insuline+profile.repas/(k_i/k_c);
-        }
-      }
-      else{
-        if (profile.heure_repas>0){
-          if (currentMinute==60+(profile.minute_repas-30) && currentHour==profile.heure_repas-1){
-            insuline=insuline+profile.repas/(k_i/k_c);
-          }
-        }
-        else{
-          if (currentMinute==60+(profile.minute_repas-30) && currentHour==23){
-            insuline=insuline+profile.repas/(k_i/k_c);
-          }
-        }
-      }
-      
+    if (window.repas_annonce_flag==true){
+      tau_a=60*Math.abs(heure_annonce-profile.heure_repas)+Math.abs(minute_annonce-profile.minute_repas);
     }
     
+    var tau=tau_a-Math.min(tau_a,tau_i-profile.tau_c-profile.tau_margin);
+    var T=Math.min(profile.T_i,profile.T_c-profile.T_margin);
   
-    if (bg<bg_critique){
-      insuline=0;
-    }
-    if (insuline<0){
-      insuline=0;
-    }
   
-    window.x2=(1-te/tau_i)*x2 + te/tau_i*window.x3 - te*L1*bg;
-    if (window.x3==0.0){
-      window.x2=0.0;
+    currentDate=new Date();
+    if (currentDate.getHours()==profile.heure_repas-Math.floor(tau_a/60) && currentDate.getMinutes()==profile.minute_repas-tau_a%60){
+      dirac=1;
     }
-  
-    window.x3=(1-te/tau_i)*window.x3 + te/tau_i*window.u_prec - te*L2*bg;
-    if ((window.u_prec<=insuline_basal)&&(insuline<=insuline_basal)){
-      window.x3=0.0;
+    if (currentDate.getHours()>=profile.heure_repas-Math.floor(tau_a/60) && currentDate.getMinutes()>=profile.minute_repas-tau_a%60){
+      heaviside=1;
     }
   
-    window.u_prec=insuline;
+    var aux=((currentDate.getHours()*60+currentDate.getMinutes())-tau)/profile.T_c;
+    var ua = k_c/k_i*(profile.repas/profile.T_c)*(T*dirac+(1-T/profile.T_c)*heaviside*((1+0.5*aux)/(1-0.5*aux))) //L'exponentielle a été approximée par l'approximant de Padé de premier ordre
+    insuline = insuline + ua;
+   
   
   
     
