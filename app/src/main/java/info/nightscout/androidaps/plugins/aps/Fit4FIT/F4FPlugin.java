@@ -1,4 +1,4 @@
-package info.nightscout.androidaps.plugins.aps.DynamicBolusCalculator;
+package info.nightscout.androidaps.plugins.aps.Fit4FIT;
 
 import org.json.JSONException;
 import org.slf4j.Logger;
@@ -40,16 +40,16 @@ import info.nightscout.androidaps.utils.SP;
 /**
  * Created by mike on 05.08.2016.
  */
-public class DBCPlugin extends PluginBase implements APSInterface {
+public class F4FPlugin extends PluginBase implements APSInterface {
     private static Logger log = LoggerFactory.getLogger(L.APS);
 
-    private static DBCPlugin DBCPlugin;
+    private static F4FPlugin F4FPlugin;
 
-    public static DBCPlugin getPlugin() {
-        if (DBCPlugin == null) {
-            DBCPlugin = new DBCPlugin();
+    public static F4FPlugin getPlugin() {
+        if (F4FPlugin == null) {
+            F4FPlugin = new F4FPlugin();
         }
-        return DBCPlugin;
+        return F4FPlugin;
     }
 
     // last values
@@ -58,14 +58,14 @@ public class DBCPlugin extends PluginBase implements APSInterface {
     DetermineBasalResultAMA lastAPSResult = null;
     AutosensResult lastAutosensResult = null;
 
-    private DBCPlugin() {
+    private F4FPlugin() {
         super(new PluginDescription()
                 .mainType(PluginType.APS)
-                .fragmentClass(DBCFragment.class.getName())
-                .pluginName(R.string.dynamicboluscalculator)
-                .shortName(R.string.dbc_shortname)
-                .preferencesId(R.xml.pref_dbc)
-                .description(R.string.description_dbc)
+                .fragmentClass(F4FFragment.class.getName())
+                .pluginName(R.string.fit4fit)
+                .shortName(R.string.f4f_shortname)
+                .preferencesId(R.xml.pref_f4f)
+                .description(R.string.description_f4f)
         );
     }
 
