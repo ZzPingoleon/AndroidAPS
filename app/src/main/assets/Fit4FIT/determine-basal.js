@@ -215,7 +215,7 @@ var determine_basal = function determine_basal(glucose_status, currenttemp, iob_
   
     var k_d=0.85;
     var k_i=50;
-    var ti=60;
+    var tau_i=60;
     var k_c=1;
     var bg_ref=100;
     var bg_critique=50;
@@ -224,7 +224,7 @@ var determine_basal = function determine_basal(glucose_status, currenttemp, iob_
     k_d=u_b*cf;
     k_i=cf;
     k_c=cf/cir;
-    ti=dia;
+    tau_i=dia;
   
     //observateur d'état:
     var L1=profile.L1;
@@ -235,7 +235,7 @@ var determine_basal = function determine_basal(glucose_status, currenttemp, iob_
     var insuline_basal=debit_basal;
   
     
-    var insuline=(bg-bg_ref)/k_i-ti*(x2+x3);
+    var insuline=(bg-bg_ref)/k_i-tau_i*(x2+x3);
   
     if (bg<target_bg){
       insuline=0;
@@ -244,9 +244,7 @@ var determine_basal = function determine_basal(glucose_status, currenttemp, iob_
   
     insuline=insuline+insuline_basal;
   
-    //if (meal_data.carbs>0){
-    //  insuline=insuline+meal_data.carbs/(k_i/k_c);
-    //}
+    
   
     if (profile.meal_treatment){
       //gérer une prise en compte à l'avance de 30 minutes, remplacer 30 par une variable de temps autre (code à ajuster si temps>59) si nécessaire
@@ -278,13 +276,12 @@ var determine_basal = function determine_basal(glucose_status, currenttemp, iob_
       insuline=0;
     }
   
-    //MainApp.setx2((1-te/ti)*MainApp.getx2() + te/ti*MainApp.getx3() - te*L1*bg);
-    x2=(1-te/ti)*x2 + te/ti*x3 - te*L1*bg;
+    x2=(1-te/tau_i)*x2 + te/tau_i*x3 - te*L1*bg;
     if (x3==0.0){
       x2=0.0;
     }
   
-    x3=(1-te/ti)*x3 + te/ti*u_prec - te*L2*bg;
+    x3=(1-te/tau_i)*x3 + te/tau_i*u_prec - te*L2*bg;
     if ((u_prec<=insuline_basal)&&(insuline<=insuline_basal)){
       x3=0.0;
     }
