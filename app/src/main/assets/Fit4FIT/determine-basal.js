@@ -18,6 +18,8 @@ var x2=0.0;
 var x3=0.0;
 var u_prec=0.0;
 
+var repas_annonce_flag=false;
+
 var round_basal = require('../round-basal')
 
 // Rounds value to 'digits' decimal places
@@ -208,6 +210,9 @@ var determine_basal = function determine_basal(glucose_status, currenttemp, iob_
     var currentHour=currentDate.getHours();
     var currentMinute=currentDate.getMinutes();
   
+    var minute_annonce=0;
+    var heure_annonce=0;
+  
     var u_b=profile.Ub;
     var cf=profile.CF;
     var cir=profile.CIR;
@@ -234,8 +239,16 @@ var determine_basal = function determine_basal(glucose_status, currenttemp, iob_
     var debit_basal=k_d/k_i;
     var insuline_basal=debit_basal;
   
+  
+    var if (profile.meal_treatment && window.repas_annonce_flag==false){
+      currentDate=new Date();
+      minute_annonce=currentDate.getMinutes();
+      heure_annonce=currentDate.getHours();
+      window.repas_annonce_flag=true; //à remettre en false après le traitement du repas
+    }
+  
     
-    var insuline=(bg-bg_ref)/k_i-tau_i*(x2+x3);
+    var insuline=(bg-bg_ref)/k_i-tau_i*(window.x2+window.x3);
   
     if (bg<target_bg){
       insuline=0;
@@ -276,17 +289,17 @@ var determine_basal = function determine_basal(glucose_status, currenttemp, iob_
       insuline=0;
     }
   
-    x2=(1-te/tau_i)*x2 + te/tau_i*x3 - te*L1*bg;
-    if (x3==0.0){
-      x2=0.0;
+    window.x2=(1-te/tau_i)*x2 + te/tau_i*window.x3 - te*L1*bg;
+    if (window.x3==0.0){
+      window.x2=0.0;
     }
   
-    x3=(1-te/tau_i)*x3 + te/tau_i*u_prec - te*L2*bg;
-    if ((u_prec<=insuline_basal)&&(insuline<=insuline_basal)){
-      x3=0.0;
+    window.x3=(1-te/tau_i)*window.x3 + te/tau_i*window.u_prec - te*L2*bg;
+    if ((window.u_prec<=insuline_basal)&&(insuline<=insuline_basal)){
+      window.x3=0.0;
     }
   
-    u_prec=insuline;
+    window.u_prec=insuline;
   
   
     
