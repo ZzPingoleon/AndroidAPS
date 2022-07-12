@@ -237,10 +237,10 @@ public class DetermineBasalAdapterAMAJS {
         Double DIA_default=60.0;
         Double max_basal=5.0;
         Double tau_c_default=60.0;
-        Double T_i_default=60;
-        Double T_c_default=60;
-        Double tau_margin_default=30;
-        Double T_margin_default=30;
+        Double T_i_default=60.0;
+        Double T_c_default=60.0;
+        Double tau_margin_default=30.0;
+        Double T_margin_default=30.0;
         
         
         mProfile.put("Ub", SP.getDouble(R.string.key_f4f_Ub, Ub_default));
