@@ -38,6 +38,7 @@ import info.nightscout.androidaps.plugins.aps.loop.LoopPlugin;
 import info.nightscout.androidaps.plugins.aps.openAPSAMA.OpenAPSAMAPlugin;
 import info.nightscout.androidaps.plugins.aps.DynamicBolusCalculator.DBCPlugin;
 import info.nightscout.androidaps.plugins.aps.Pid.PidPlugin;
+import info.nightscout.androidaps.plugins.aps.Fit4FIT.F4FPlugin;
 import info.nightscout.androidaps.plugins.aps.openAPSMA.OpenAPSMAPlugin;
 import info.nightscout.androidaps.plugins.aps.openAPSSMB.OpenAPSSMBPlugin;
 import info.nightscout.androidaps.plugins.configBuilder.ConfigBuilderPlugin;
@@ -95,6 +96,7 @@ import info.nightscout.androidaps.plugins.source.ManualPlugin;
 import info.nightscout.androidaps.plugins.source.SourceTomatoPlugin;
 import info.nightscout.androidaps.plugins.source.SourceXdripPlugin;
 import info.nightscout.androidaps.plugins.source.SourceXdripPluginManual;
+import info.nightscout.androidaps.plugins.source.SourceVirtualPatientPlugin;
 import info.nightscout.androidaps.plugins.treatments.TreatmentsPlugin;
 import info.nightscout.androidaps.receivers.ChargingStateReceiver;
 import info.nightscout.androidaps.receivers.DataReceiver;
@@ -236,6 +238,7 @@ public class MainApp extends Application {
             if (Config.APS) pluginsList.add(OpenAPSAMAPlugin.getPlugin());
             if (Config.APS) pluginsList.add(DBCPlugin.getPlugin());
             if (Config.APS) pluginsList.add(PidPlugin.getPlugin());
+            if (Config.APS) pluginsList.add(F4FPlugin.getPlugin());
             if (Config.APS) pluginsList.add(OpenAPSSMBPlugin.getPlugin());
             pluginsList.add(NSProfilePlugin.getPlugin());
             if (!Config.NSCLIENT) pluginsList.add(LocalProfilePlugin.INSTANCE);
@@ -260,6 +263,7 @@ public class MainApp extends Application {
             pluginsList.add(RandomBG3Plugin.INSTANCE);
             pluginsList.add(SmallOscillationPlugin.INSTANCE);
             pluginsList.add(ConstantPlugin.INSTANCE);
+            pluginsList.add(SourceVirtualPatientPlugin.getPlugin());
             if (!Config.NSCLIENT) pluginsList.add(SmsCommunicatorPlugin.INSTANCE);
             pluginsList.add(FoodPlugin.getPlugin());
 
