@@ -256,7 +256,7 @@
         <!-- Choix de la minute du repas -->
         <com.andreabaccega.widget.ValidatingEditTextPreference
             android:defaultValue="0"
-            android:dialogMessage="@string/openapsama_f4f_summary"
+            android:dialogMessage="@string/f4f_minuterepas_summary"
             android:inputType="number"
             android:key="@string/key_f4f_minuterepas"
             android:maxLines="20"
