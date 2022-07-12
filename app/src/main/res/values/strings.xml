@@ -607,7 +607,7 @@
     <string name="f4f_tau_margin_summary">Default value: 30. Tau_margin, marge de temps en min.</string>
     <string name="f4f_t_margin" translatable="false">T_margin</string>
     <string name="key_f4f_t_margin" translatable="false">f4f_t_margin</string>
-    <string name="f4f_t_margin_summary">Default value: 30. T_margin, marge de temps en min à définir de telle sorte que T_margin <= T_c.</string>
+    <string name="f4f_t_margin_summary">Default value: 30. T_margin, marge de temps en min à définir de telle sorte que T_margin \<= T_c.</string>
     
     
     
