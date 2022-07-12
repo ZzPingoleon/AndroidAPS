@@ -2,7 +2,7 @@
 
 This directory contains the main architecture of the Android APS application.
 
-The main file where every module is connected is in the "MainApp.java"
+The main file where every module is connected is in the "MainApp.java". All new plugin must be declared in this file.
 
 Then, every aspect of the application has to be coded as a Plugin, contianed in the "plugins" directory.
 
