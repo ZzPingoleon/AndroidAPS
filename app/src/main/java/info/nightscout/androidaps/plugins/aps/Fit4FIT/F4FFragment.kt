@@ -23,7 +23,7 @@ import org.json.JSONArray
 import org.json.JSONException
 import org.slf4j.LoggerFactory
 
-class DBCFragment : Fragment() {
+class F4FFragment : Fragment() {
     private val log = LoggerFactory.getLogger(L.APS)
     private var disposable: CompositeDisposable = CompositeDisposable()
 
