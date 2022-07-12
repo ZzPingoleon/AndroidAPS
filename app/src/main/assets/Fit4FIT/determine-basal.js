@@ -197,10 +197,12 @@ var determine_basal = function determine_basal(glucose_status, currenttemp, iob_
         , 'snoozeBG': snoozeBG
     };
   
-  
     var basaliob;
     if (iob_data.basaliob) { basaliob = iob_data.basaliob; }
     else { basaliob = iob_data.iob - iob_data.bolussnooze; }
+  
+  
+  
   
   
     var dirac=0;
@@ -269,14 +271,20 @@ var determine_basal = function determine_basal(glucose_status, currenttemp, iob_
     var ua = k_c/k_i*(profile.repas/profile.T_c)*(T*dirac+(1-T/profile.T_c)*heaviside*((1+0.5*aux)/(1-0.5*aux))) //L'exponentielle a été approximée par l'approximant de Padé de premier ordre
     insuline = insuline + ua;
    
-  
-  
+    if (currentDate.getHours()>profile.heure_repas && currentDate.getMinutes()>profile.minute_repas){
+      window.repas_annonce_flag=false;
+    }    
     
   
     if (currentMinute%5==0){
       rT.reason="5 minutes passées"
       return tempBasalFunctions.setTempBasal(insuline, 30, profile, rT, currenttemp);
     }
+  
+  
+  
+  
+  
 
     // generate predicted future BGs based on IOB, COB, and current absorption rate
 
